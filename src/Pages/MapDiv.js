@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Map from "../Components/Map/Map";
-import { sampledata } from "../Data/SampleData";
+
 import FoodList from "../Components/FoodList/FoodList";
 import {activity} from "../Data/activity";
 import attraction from "../Data/attraction";
@@ -8,7 +8,7 @@ import lodging from "../Data/lodging";
 import restaurant from "../Data/restaurant"
 
 const MapDiv = () => {
-    const c =[...activity,...attraction,...lodging,...restaurant]
+    
     const [inputText, setInputText] = useState("");
     const [place, setPlace] = useState("");
     const [category,setCategory] = useState("");
@@ -26,20 +26,20 @@ const MapDiv = () => {
             case 'restaurant':setCategory(restaurant); break;
             case 'lodging':setCategory(lodging); break;
         }
-        
+        //카테고리에 따라 데이터 선택
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (inputText == `s`) {
+        if (inputText !== "") {
             
             setPlace(category);
-            
+            //카테고리에 맞게 place변경
         } else {
             setPlace("")
         }
 
-        setInputText("");
+        // setInputText("");
     };
 
     const handleReset = (e) => {
@@ -47,12 +47,13 @@ const MapDiv = () => {
         setPlace("removeAll");
         setInputText("");
     };
+    
 
     return (
         <>
             <form className="inputForm" onSubmit={handleSubmit} onReset={handleReset}>
                 
-                <select onChange={changeCategory}>
+                <select onChange={changeCategory}>      
                     <option value ="activity">액티비티</option>
                     <option value ="restaurant">맛집</option>
                     <option value ="lodging">숙소</option>
@@ -66,9 +67,11 @@ const MapDiv = () => {
                 <button type="submit">검색</button>
                 <button type="reset">초기화</button>
             </form>
-            <Map searchPlaces={place} />
+            <Map searchPlaces={place} input={inputText} /> 
+            
             <FoodList />
         </>
     );
 };
+//Map 컴포넌트에 장소정보와 검색한 텍스트를 넘겨줌
 export default MapDiv;

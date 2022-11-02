@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 
 const { kakao } = window;
 
-const Map = ({ searchPlaces }) => {
+const Map = (props) => {
 
     useEffect(() => {
         const container = document.getElementById('map');
@@ -15,28 +15,39 @@ const Map = ({ searchPlaces }) => {
 
         var markers = [];
         var infowWindows = [];
-        // const ps = new kakao.maps.services.Places();
-        // ps.keywordSearch(searchPlaces, placesSearchCB);
+        
+        console.log(props.input)
+        if (props.searchPlaces == "removeAll") {
+            removeMarkers();
+        }
+        else if (props.input == "all") {
+            setMarkers(props.searchPlaces);
+        } // all 입력하면 모든 마커 띄움 
+        
+        else {
+            let arr=[];
+            for(let i = 0;i<props.searchPlaces.length;i++){
+                if(props.searchPlaces[i].name == props.input){
+                    arr.push(props.searchPlaces[i])
+                    setMarkers(arr)
+                }
+            }
+        } //검색했을때 이름이 일치하는 장소만 마커 띄움
 
         // function placesSearchCB(places, status, pagination) {
         //     if (status === kakao.maps.services.Status.OK) {
-
+        //         console.log(status)
         //         let bounds = new kakao.maps.LatLngBounds();
 
         //         for (let i = 0; i < places.length; i++) {
         //             displayMarker(places[i]);
-        //             bounds.extend(new kakao.maps.LatLng(places[i].y, places[i].x));
+        //             bounds.extend(new kakao.maps.LatLng(places[i].latitude, places[i].longitude));
         //         }
 
         //         map.setBounds(bounds);
         //     }
         // }
-        if (searchPlaces == "removeAll") {
-            removeMarkers();
-        }
-        else if (searchPlaces !== "") {
-            setMarkers(searchPlaces);
-        }
+        
         function setMarkers(places) {
             console.log(places)
             if (markers.length > 0) {
@@ -49,7 +60,7 @@ const Map = ({ searchPlaces }) => {
                 bounds.extend(new kakao.maps.LatLng(places[i].latitude, places[i].longitude))
             }
             map.setBounds(bounds);
-        }
+        } 
 
         function displayMarker(place) {
             let marker = new kakao.maps.Marker({
@@ -105,7 +116,7 @@ const Map = ({ searchPlaces }) => {
                 panTo(latLng.getLat(), latLng.getLng());
             }
         }
-    }, [searchPlaces]);
+    }, [props.searchPlaces]);
 
     return (
         <div id='map' style={{
