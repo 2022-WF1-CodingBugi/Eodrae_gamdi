@@ -1,0 +1,27 @@
+#logo {
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+}
+#search {
+    text-align: center;
+    margin-top: 70px;
+}
+#categorySelect {
+    width: 90px;
+    height: 30px;
+    font-size:20px;
+    text-align: center;
+    vertical-align: middle;
+}
+#searchInput {
+    height: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+#searchBtn {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-left: 10px;
+}

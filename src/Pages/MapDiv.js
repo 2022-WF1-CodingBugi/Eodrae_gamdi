@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Map from "../Components/Map/Map";
-
+import "./Sub.css"
 import FoodList from "../Components/FoodList/FoodList";
 import {activity} from "../Data/activity";
 import attraction from "../Data/attraction";
@@ -53,19 +53,20 @@ const MapDiv = () => {
         <>
             <form className="inputForm" onSubmit={handleSubmit} onReset={handleReset}>
                 
-                <select onChange={changeCategory}>      
+                <select onChange={changeCategory} id="categorySelect">      
                     <option value ="activity">액티비티</option>
                     <option value ="restaurant">맛집</option>
                     <option value ="lodging">숙소</option>
                     <option value ="attraction">명소</option>
                 </select>
                 <input
+                    id="searchInput" type="text" size="50" defaultValue=""
                     placeholder="Search Place..."
                     onChange={onChange}
                     value={inputText}
                 />
-                <button type="submit">검색</button>
-                <button type="reset">초기화</button>
+                <button id="searchBtn" type="submit">검색</button>
+                <button id="searchBtn" type="reset">초기화</button>
             </form>
             <Map searchPlaces={place} input={inputText} /> 
             

@@ -1,0 +1,36 @@
+header {
+    text-align: center;
+}
+#main_logo {
+    width: 500px;
+    height: 350px;
+}
+section {
+    text-align: center;
+    margin-top: 30px;
+}
+.categoryImage {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+.category {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border: 3px solid lightgray;
+    border-radius: 30px;
+    background-color: white;
+    text-align: center;
+    margin: 20px;
+}
+.category:hover {
+    border-color: black;
+}
+#carousel_div {
+    width: 80%;
+    border: solid 1px black;
+    text-align: center;
+    align-items: center;
+}
