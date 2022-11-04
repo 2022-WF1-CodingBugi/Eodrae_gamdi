@@ -17,7 +17,7 @@ const MapDiv = () => {
         switch (temp) {
             case 'activity': setCategory(activity); break;
             case 'attraction': setCategory(attraction); break;
-            case 'restaurant': setCategory(restaurant); break;
+            case 'food': setCategory(restaurant); break;
             case 'lodging': setCategory(lodging); break;
         }
     }, [])
