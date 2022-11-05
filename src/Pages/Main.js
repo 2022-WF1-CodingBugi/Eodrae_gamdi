@@ -1,9 +1,6 @@
 import React from "react";
 // import Carousel from "react-material-ui-carousel";
 // import {Paper, Button, requirePropFactory} from "@mui/material";
-
-
-
 import main_logo from "./images/main_logo.png"
 import food_category from "./images/food.png"
 import activity_category from "./images/activity.png"

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-
-
 const Category = ({ name, src, onChangePage = f => f }) => {
     let [cate, setCate] = useState("");
     const categoryClick = ({ id }) => {
