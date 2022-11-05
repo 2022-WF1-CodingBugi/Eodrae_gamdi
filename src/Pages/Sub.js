@@ -1,8 +1,12 @@
 import "./Sub.css"
 import MapDiv from "./MapDiv";
 import main_logo from "./images/main_logo.png"
+import { useNavigate } from "react-router-dom";
+
 
 const Sub = () => {
+    let navigate = useNavigate()
+    //sub페이지에서 로고 누르면 홈으로 이동하게
     const init = () => {
         document.write("init");
         var category = document.getElementById("categorySelect");
@@ -22,7 +26,9 @@ const Sub = () => {
     return (
         <>
             <header>
-                <img id="logo" src={main_logo} alt="어드레감디"/>
+                
+                <img onClick={()=>{navigate('/')}} id="logo" src={main_logo} alt="어드레감디"/>
+                
             </header>
             <MapDiv />
         </>

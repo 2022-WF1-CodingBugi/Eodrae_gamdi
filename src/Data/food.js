@@ -1,4 +1,4 @@
-const restaurant = [
+const food = [
     {
         name : "우진해장국",
         latitude : 33.5108509899879,
@@ -33,4 +33,4 @@ const restaurant = [
         star : 0.0
     }
 ]
-export default restaurant
+export default food
