@@ -11,17 +11,17 @@ const MapDiv = () => {
     const [inputText, setInputText] = useState("");
     const [place, setPlace] = useState("");
     const [category, setCategory] = useState(activity); // 일단 액티비티로 해놈
-    const [selected,setSelected] = useState("") //옵션 선택바가 자동으로 바뀌게 수정
+    const [selected, setSelected] = useState('activity') //옵션 선택바가 자동으로 바뀌게 수정
 
     useEffect(() => {
         const temp = sessionStorage.getItem('category');
+        setSelected(temp);
         switch (temp) {
             case 'activity': setCategory(activity); break;
             case 'attraction': setCategory(attraction); break;
             case 'food': setCategory(food); break;
             case 'lodging': setCategory(lodging); break;
         }
-        setSelected(temp)
     }, [])
 
     const onChange = (e) => {
@@ -31,6 +31,8 @@ const MapDiv = () => {
     const changeCategory = (e) => {
 
         let select = e.target.value;
+        sessionStorage.setItem('category', select);
+
         switch (select) {
             case 'activity': setCategory(activity); break;
             case 'attraction': setCategory(attraction); break;
@@ -38,7 +40,7 @@ const MapDiv = () => {
             case 'lodging': setCategory(lodging); break;
         }
         setSelected(select)
-        
+
         //카테고리에 따라 데이터 선택
     }
 
@@ -66,7 +68,7 @@ const MapDiv = () => {
         <>
             <form className="inputForm" onSubmit={handleSubmit} onReset={handleReset}>
 
-                <select onChange={changeCategory} id="categorySelect" value = {selected} >
+                <select onChange={changeCategory} id="categorySelect" value={selected} >
                     <option value="activity">액티비티</option>
                     <option value="food">맛집</option>
                     <option value="lodging">숙소</option>
@@ -82,7 +84,7 @@ const MapDiv = () => {
                 <button id="searchBtn" type="reset">초기화</button>
             </form>
             <Map searchPlaces={place} input={inputText} />
-            <FoodList category={category} />
+            <FoodList places={category} category={selected} />
         </>
     );
 };
