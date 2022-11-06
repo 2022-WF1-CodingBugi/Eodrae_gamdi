@@ -12,6 +12,7 @@ const MapDiv = () => {
     const [place, setPlace] = useState("");
     const [category, setCategory] = useState(activity); // 일단 액티비티로 해놈
     const [selected, setSelected] = useState('activity') //옵션 선택바가 자동으로 바뀌게 수정
+    const [search,setSearch] = useState(true) //검색기능이 최초 한번 실행 이후 안되는걸 고치기 위한 변수
 
     useEffect(() => {
         const temp = sessionStorage.getItem('category');
@@ -53,6 +54,7 @@ const MapDiv = () => {
         } else {
             setPlace("")
         }
+        search?setSearch(false):setSearch(true) //검색 버튼을 누를때마다 search값 바뀌게 설정
 
         // setInputText("");
     };
@@ -83,7 +85,7 @@ const MapDiv = () => {
                 <button id="searchBtn" type="submit">검색</button>
                 <button id="searchBtn" type="reset">초기화</button>
             </form>
-            <Map searchPlaces={place} input={inputText} />
+            <Map searchPlaces={place} input={inputText} search={search}/>
             <FoodList places={category} category={selected} />
         </>
     );
