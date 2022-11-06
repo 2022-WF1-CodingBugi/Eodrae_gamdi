@@ -1,16 +1,28 @@
 body {
+    pointer-events : auto;
     font-family: "foodListFont";
+}
+
+@font-face {
+    font-family: "foodListFont";
+    src: url("../../Resources/Fonts/EF_Diary.ttf")format("truetype");
+}
+
+@font-face {
+    font-family: "foodListLikeFont";
+    src: url("../../Resources/Fonts/DalseoHealingBold.ttf")format("truetype");
 }
 
 .Food-List-Container {
     text-align: center;
     display: inline-block;
 
+    /* 
     background-image: url("../../Resources/Images/background-image/item-list-background.png");
     background-size: cover;
     background-position: center;
 
-    /* padding-left: 30px;
+    padding-left: 30px;
     padding-right: 30px;
     padding-top: 15px;
     padding-bottom: 40px; */
@@ -51,13 +63,9 @@ body {
 }
 
 .Food-List-Item:hover {
+    cursor: pointer;
     box-shadow: 5px 5px 3px 3px gray;
     white-space: pre-wrap;
-}
-
-@font-face {
-    font-family: "foodListFont";
-    src: url("../../Resources/Fonts/EF_Diary.ttf")format("truetype");
 }
 
 .Food-List-Item-Image {
@@ -66,7 +74,6 @@ body {
 }
 
 .Food-List-Item-Image-div {
-    display: none;
     width: 75%;
     background-color: white;
     margin: 0 auto;
@@ -75,6 +82,6 @@ body {
     border-radius: 20px;
 }
 
-.Food-List-Item:hover~.Food-List-Item-Image-div {
-    display: block;
+.Food-List-like {
+    font-family: "foodListLikeFont";
 }
