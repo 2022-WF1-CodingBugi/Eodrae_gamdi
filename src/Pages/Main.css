@@ -2,12 +2,11 @@ header {
     text-align: center;
 }
 #main_logo {
-    width: 500px;
-    height: 350px;
+    width: 330px;
+    height: 200px;
 }
 section {
     text-align: center;
-    margin-top: 30px;
 }
 .categoryImage {
     width: 100px;
@@ -28,9 +27,14 @@ section {
 .category:hover {
     border-color: black;
 }
-#carousel_div {
-    width: 80%;
-    border: solid 1px black;
+.carousel_div {
+    display: inline-block;
+    width: 150px;
     text-align: center;
     align-items: center;
+    margin: 5px;
+}
+.carousel_img {
+    width: 150px;
+    height: 150px;
 }
