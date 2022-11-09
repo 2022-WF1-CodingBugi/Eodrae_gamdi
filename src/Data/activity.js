@@ -1,8 +1,8 @@
 const activity = [
     {
         name: "9.81파크",
-        latitude: 33.48524674045696,
-        longitude: 126.4813953072775,
+        latitude: 33.39029433338714,
+        longitude: 126.36666450516887,
         address: "제주특별자치도 제주시 애월읍 천덕로 880-24 (우)63038",
         image: "./images/activity/9.81파크.png",
         kakao_map: "https://place.map.kakao.com/1868828759",
@@ -12,8 +12,8 @@ const activity = [
     },
     {
         name: "중문오프로드체험장",
-        latitude: 33.27269405033306,
-        longitude: 126.39953539612095,
+        latitude: 33.275575117122834,
+        longitude: 126.39682417421156,
         address: "제주특별자치도 서귀포시 상예로 349 (우)63548",
         image: "./images/activity/중문오프로드체험장.png",
         kakao_map: "https://place.map.kakao.com/2049204914",

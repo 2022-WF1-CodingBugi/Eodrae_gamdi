@@ -1,8 +1,8 @@
 const food = [
     {
         name : "우진해장국",
-        latitude : 33.5108509899879,
-        longitude : 126.5209117268871,
+        latitude : 33.51151689656457,
+        longitude : 126.52000128027187,
         address : "제주특별자치도 제주시 서사로 11",
         image : "./images/food/우진해장국.png",
         kakao_map : "https://place.map.kakao.com/11547525",
@@ -12,8 +12,8 @@ const food = [
     },
     {
         name : "미영이네식당",
-        latitude : 33.2162160961085,
-        longitude : 126.25181555968082,
+        latitude : 33.21767376914215,
+        longitude : 126.24982946085794,
         address : "제주특별자치도 서귀포시 대정읍 하모항구로 42 (우)63506",
         image : "./images/food/미영이네식당.png",
         kakao_map : "https://place.map.kakao.com/9006988",
