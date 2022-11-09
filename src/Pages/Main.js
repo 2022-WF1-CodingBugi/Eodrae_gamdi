@@ -17,11 +17,11 @@ import "./Main.css";
 import Category from "./Category";
 
 const Main = ({ onChange = f => f }) => {
-
     const createCarousel = (data) => {
         return (
-            <div className="carousel_div">
+            <div className="carousel_div" onClick={() => window.open(data.kakao_map)}>
                 <img className="carousel_img" src={data.image} alt={data.name}/>
+                <h5>{data.name}</h5>
             </div>
         )
     }
@@ -40,16 +40,16 @@ const Main = ({ onChange = f => f }) => {
             <seciton>
                 <Carousel indicators={false}>
                     {
-                        food.map( (d, i) => createCarousel(d))
+                        food.map( (d, i) => i < 7 ? createCarousel(d) : null)
                     }
                     {
-                        activity.map( (d, i) => createCarousel(d))
+                        activity.map( (d, i) => i < 7 ? createCarousel(d) : null)
                     }
                     {
-                        lodging.map( (d, i) => createCarousel(d))
+                        lodging.map( (d, i) => i < 7 ? createCarousel(d) : null)
                     }
                     {
-                        attraction.map( (d, i) => createCarousel(d))
+                        attraction.map( (d, i) => i < 7 ? createCarousel(d) : null)
                     }
                 </Carousel>
             </seciton>
