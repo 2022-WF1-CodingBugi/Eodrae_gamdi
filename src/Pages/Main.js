@@ -72,7 +72,7 @@ const Main = ({ onChange = f => f }) => {
         return (
             <div className="carousel_div" onClick={() => window.open(data.kakao_map)}>
                 <img className="carousel_img" src={data.image} alt={data.name}/>
-                <h5>{data.name}</h5>
+                <h4 className="carousel_name">{data.name}</h4>
             </div>
         )
     }

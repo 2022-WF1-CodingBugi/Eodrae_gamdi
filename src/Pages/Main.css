@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "Donoun";
+    src: url("../Resources/Fonts/Donoun\ Medium.ttf")format("truetype");
+}
 /*클릭했을 때 테두리 생기는 것 방지*/
 *:focus {
     outline: none;
@@ -11,8 +15,9 @@ header {
     margin-right: 10px;
 }
 #main_logo {
-    width: 500px;
-    height: 350px;
+    width: 350px;
+    height: 220px;
+    margin-top: 30px;
 }
 section {
     text-align: center;
@@ -31,12 +36,12 @@ section {
     border-radius: 30px;
     background-color: white;
     text-align: center;
-    margin: 20px;
+    margin: 30px;
 }
 .category:hover {
     border-color: black;
 }
-#carousel_div {
+.carousel_div {
     display: inline-block;
     width: 150px;
     text-align: center;
@@ -65,7 +70,7 @@ section {
     text-align: center;
 }
 .login-input-passw{
-   text-align: center;
+    text-align: center;
 }
 .login-back-btn, .login-btn{
     margin-top: 30px;
@@ -91,6 +96,9 @@ section {
 }
 .carousel_img:hover {
     border-color: black;
+}
+.carousel_name {
+    font-family: "Donoun";
 }
 
 .empty{
