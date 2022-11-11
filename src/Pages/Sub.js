@@ -26,7 +26,9 @@ const Sub = () => {
     return (
         <>
             <header>
+                
                 <img onClick={()=>{navigate('/')}} id="logo" src={main_logo} alt="어드레감디"/>
+                
             </header>
             <MapDiv />
         </>
