@@ -1,4 +1,6 @@
 /*global kakao */
+import { Margin } from '@mui/icons-material';
+import '../List/List';
 import React, { useEffect } from 'react';
 
 const { kakao } = window;
@@ -119,11 +121,8 @@ const Map = (props) => {
     }, [props.searchPlaces]);
 
     return (
-        <div id='map' style={{
-            width: '60%',
-            height: '500px',
-            display: 'inline-block'
-        }}></div>
+        // style은 List.css에 적용
+        <div id='map'></div>
     );
 }
 

@@ -13,33 +13,43 @@ body {
     src: url("../../Resources/Fonts/DalseoHealingBold.ttf")format("truetype");
 }
 
-.Food-List-Container {
+#map {
     text-align: center;
+    width: 600px;
+    height: 500px;
     display: inline-block;
 
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.List-Container {
+    text-align: center;
+    display: inline-block;
     /* 
     background-image: url("../../Resources/Images/background-image/item-list-background.png");
     background-size: cover;
     background-position: center;
-
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 15px;
-    padding-bottom: 40px; */
-
-    width: 40%;
+    */
+    width: 400px;
     height: 500px;
-    margin: 0 auto;
 
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    
     overflow-y: scroll;
     -ms-overflow-style: none;
 }
 
-.Food-List-Container::-webkit-scrollbar {
+.List-Container::-webkit-scrollbar {
     display: none;
 }
 
-.Food-List-Item {
+.List-Item {
     text-align: justify;
 
     white-space: pre;
@@ -58,22 +68,24 @@ body {
 
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
-.Food-List-Item:hover {
+.List-Item:hover {
     cursor: pointer;
     box-shadow: 5px 5px 3px 3px gray;
     white-space: pre-wrap;
 }
 
-.Food-List-Item-Image {
+.List-Item-Image {
     width: 60%;
     padding-top: 20px;
 }
 
-.Food-List-Item-Image-div {
+.List-Item-Image-div {
+    background-color: white;
+    visibility: hidden;
+    height: 0vh;
+    transition: height 0.3s;
     width: 75%;
     background-color: white;
     margin: 0 auto;
@@ -82,6 +94,20 @@ body {
     border-radius: 20px;
 }
 
-.Food-List-like {
+.List-like {
     font-family: "foodListLikeFont";
+}
+
+.add-List-container {
+    background-color: crimson;
+    position: absolute;
+    overflow:hidden;
+    width: 800px;
+    height: 500px;
+    top: 15%;
+    bottom: 15%;
+    left: 10%;
+    right: 10%;
+    padding: 15px;
+    margin: 0 auto;
 }

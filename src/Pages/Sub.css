@@ -1,7 +1,12 @@
 #logo {
+    text-align: center;
     width: 200px;
-    height: 100px;
-    margin-top: 10px;
+    height: 140px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#logo:hover{
+    cursor: pointer;
 }
 #search {
     text-align: center;

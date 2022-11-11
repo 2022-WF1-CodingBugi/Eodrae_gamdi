@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Map from "../Components/Map/Map";
 import "./Sub.css"
-import FoodList from "../Components/FoodList/FoodList";
+import List from "../Components/List/List"; // foodList -> List로 변경
 import activity from "../Data/activity";
 import attraction from "../Data/attraction";
 import lodging from "../Data/lodging";
 import food from "../Data/food"
 
-const MapDiv = () => {
+const MapDiv = ({history}) => {
     const [inputText, setInputText] = useState("");
     const [place, setPlace] = useState("");
     const [category, setCategory] = useState(activity); // 일단 액티비티로 해놈
@@ -17,6 +18,10 @@ const MapDiv = () => {
         const temp = sessionStorage.getItem('category');
         setSelected(temp);
         switch (temp) {
+            // 호빈 : List에 카테고리 데이터가 아닌 카테고리 이름만 넘겨주는 것으로 바꾸는건 어떨까요??
+            // 이유 : 데이터를 받아서 그대로 map함수를 적용하면 컴포넌트가 화면에 나타나지 않습니다.
+            // 그래서 현재 List.js에서 카테고리 이름을 받아 매칭되는 데이터를 불러오는 구조여서
+            // 데이터가 두 번 불러와지기 때문입니다. 변경 안해도 코드 동작에는 문제 없습니다.
             case 'activity': setCategory(activity); break;
             case 'attraction': setCategory(attraction); break;
             case 'food': setCategory(food); break;
@@ -81,10 +86,14 @@ const MapDiv = () => {
                     value={inputText}
                 />
                 <button id="searchBtn" type="submit">검색</button>
-                <button id="searchBtn" type="reset">초기화</button>
+                <button id="initializeBtn" type="reset">초기화</button>
+                <Link to = "/sub/addList">
+                <button id="addBtn" type="add" style = {{display : (localStorage.getItem("loginFlag") === "ON")? "" : "none"}}
+                >추가</button></Link>
             </form>
+            
             <Map searchPlaces={place} input={inputText} />
-            <FoodList places={category} category={selected} />
+            <List places={category} category={selected} /> 
         </>
     );
 };

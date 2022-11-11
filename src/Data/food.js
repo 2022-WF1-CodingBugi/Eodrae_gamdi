@@ -95,7 +95,7 @@ const food = [
         like : 41,
         star : makeStar(5.0),
         explanation : "트러플 오일, 핑크 소금, 와사비 조합이 흑돼지 돈까스와 만났다. 육즙 가득한 흑돼지 돈까스 맛집!"
-    }
+    },
     /*
     {
         name : "오드랑베이커리",

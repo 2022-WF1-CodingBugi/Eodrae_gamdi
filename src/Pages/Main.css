@@ -1,5 +1,14 @@
+/*클릭했을 때 테두리 생기는 것 방지*/
+*:focus {
+    outline: none;
+}
 header {
     text-align: center;
+}
+#loginBtn {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 #main_logo {
     width: 500px;
@@ -33,4 +42,43 @@ section {
     border: solid 1px black;
     text-align: center;
     align-items: center;
+}
+.login-modal{
+    position: absolute;
+    overflow:hidden;
+    background-color: white;
+    width: 400px;
+    height: 500px;
+    top: 15%;
+    bottom: 15%;
+    left: 10%;
+    right: 10%;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+.login-modal-logo{
+    float: center;
+}
+.login-input-id{
+    text-align: center;
+}
+.login-input-passw{
+   text-align: center;
+}
+.login-back-btn, .login-btn{
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.empty{
+    height: 1000px;
+}
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
