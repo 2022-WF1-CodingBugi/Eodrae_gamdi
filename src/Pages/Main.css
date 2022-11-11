@@ -1,9 +1,14 @@
+@font-face {
+    font-family: "Donoun";
+    src: url("../Resources/Fonts/Donoun\ Medium.ttf")format("truetype");
+}
 header {
     text-align: center;
 }
 #main_logo {
-    width: 330px;
-    height: 200px;
+    width: 350px;
+    height: 220px;
+    margin-top: 30px;
 }
 section {
     text-align: center;
@@ -22,7 +27,7 @@ section {
     border-radius: 30px;
     background-color: white;
     text-align: center;
-    margin: 20px;
+    margin: 30px;
 }
 .category:hover {
     border-color: black;
@@ -43,4 +48,7 @@ section {
 }
 .carousel_img:hover {
     border-color: black;
+}
+.carousel_name {
+    font-family: "Donoun";
 }
