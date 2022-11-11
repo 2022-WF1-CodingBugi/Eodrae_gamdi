@@ -1,6 +1,4 @@
 /*global kakao */
-import { Margin } from '@mui/icons-material';
-import '../List/List';
 import React, { useEffect } from 'react';
 
 const { kakao } = window;
@@ -29,7 +27,7 @@ const Map = (props) => {
         else {
             let arr=[];
             for(let i = 0;i<props.searchPlaces.length;i++){
-                if(props.searchPlaces[i].name == props.input){
+                if(props.searchPlaces[i].name.indexOf(props.input) != -1){ //장소의 이름 일부분만 검색해도 검색되게 함 ex)'우'만 검색해도 '우진해장국' 나옴
                     arr.push(props.searchPlaces[i])
                     setMarkers(arr)
                 }
@@ -73,6 +71,7 @@ const Map = (props) => {
             });
 
             let infoWindow = makeInfoWindow(place.name);
+            infoWindow.open(map,marker) // 동시에 여러 장소가 겁색 되었을때 알아보기 쉽도록 최초에도 인포윈도우 나오게 함
             kakao.maps.event.addListener(marker, 'click', makeOverListener(marker, infoWindow));
 
             markers.push(marker);
@@ -118,11 +117,15 @@ const Map = (props) => {
                 panTo(latLng.getLat(), latLng.getLng());
             }
         }
-    }, [props.searchPlaces]);
+    }, [props.search]); //useEffect 안에 있는 내용이 검색 버튼 누를때마다 랜더링되게 해 
+                        //같은 화면에서 초기화 안 누르고 여러번 검색할 수 있음
 
     return (
-        // style은 List.css에 적용
-        <div id='map'></div>
+        <div id='map' style={{
+            width: '60%',
+            height: '500px',
+            display: 'inline-block'
+        }}></div>
     );
 }
 

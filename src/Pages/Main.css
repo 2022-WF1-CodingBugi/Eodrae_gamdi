@@ -16,7 +16,6 @@ header {
 }
 section {
     text-align: center;
-    margin-top: 30px;
 }
 .categoryImage {
     width: 100px;
@@ -38,10 +37,12 @@ section {
     border-color: black;
 }
 #carousel_div {
-    width: 80%;
-    border: solid 1px black;
+    display: inline-block;
+    width: 150px;
     text-align: center;
     align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .login-modal{
     position: absolute;
@@ -69,6 +70,27 @@ section {
 .login-back-btn, .login-btn{
     margin-top: 30px;
     cursor: pointer;
+}
+
+.category:hover {
+    border-color: black;
+}
+.carousel_div {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.carousel_img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid beige;
+    border-radius: 20%;
+}
+.carousel_img:hover {
+    border-color: black;
 }
 
 .empty{

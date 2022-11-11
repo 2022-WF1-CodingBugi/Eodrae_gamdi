@@ -2,8 +2,8 @@ import makeStar from "../Components/MakeStar"
 const food = [
     {
         name : "우진해장국",
-        longitude : 126.5209117268871,
         latitude : 33.5108509899879,
+        longitude : 126.5209117268871,
         address : "제주특별자치도 제주시 서사로 11",
         image : "../images/우진해장국.png",
         kakao_map : "https://place.map.kakao.com/11547525",
@@ -14,8 +14,8 @@ const food = [
     },
     {
         name : "미영이네식당",
-        longitude : 126.25181555968082,
         latitude : 33.2162160961085,
+        longitude : 126.25181555968082,
         address : "제주특별자치도 서귀포시 대정읍 하모항구로 42 (우)63506",
         image : "../images/미영이네식당.png",
         kakao_map : "https://place.map.kakao.com/9006988",
@@ -26,8 +26,8 @@ const food = [
     },
     {
         name : "아줄레주",
-        longitude : 126.83928908564187,
         latitude : 33.36683593131745,
+        longitude : 126.83928908564187,
         address : "제주특별자치도 서귀포시 성산읍 신풍하동로19번길 59 나동 (우)63636",
         image : "../images/아줄레주.png",
         kakao_map : "https://place.map.kakao.com/2003360746",
@@ -38,8 +38,8 @@ const food = [
     },
     {
         name : "곰막식당",
-        longitude : 126.72059563908253,
         latitude : 33.556917554205135,
+        longitude : 126.72059563908253,
         address : "제주특별자치도 제주시 구좌읍 구좌해안로 64 (우)63347",
         image : "../images/곰막식당.jpeg",
         kakao_map : "https://place.map.kakao.com/18421685",
@@ -50,8 +50,8 @@ const food = [
     },
     {
         name : "제주 올래국수",
-        longitude : 126.53442614805972,
         latitude : 33.50420955090063,
+        longitude : 126.53442614805972,
         address : "제주특별자치도 제주시 월성로 39 (우)63162",
         image : "../images/올래국수.png",
         kakao_map : "https://place.map.kakao.com/559359242",
@@ -62,8 +62,8 @@ const food = [
     },
     {
         name : "스시 호시카이",
-        longitude : 126.51960387884634,
         latitude : 33.48876819230536,
+        longitude : 126.51960387884634,
         address : "제주특별자치도 제주시 오남로 90 (우)63146",
         image : "../images/스시호시카이.png",
         kakao_map : "https://place.map.kakao.com/23718318",
@@ -74,8 +74,8 @@ const food = [
     },
     {
         name : "상춘재",
-        longitude : 126.70522702035518,
         latitude : 33.460299081741255,
+        longitude : 126.70522702035518,
         address : "제주특별자치도 제주시 조천읍 선진길 26 1층 (우)63341",
         image : "../images/상춘재.png",
         kakao_map : "https://place.map.kakao.com/12397273",
@@ -86,8 +86,8 @@ const food = [
     },
     {
         name : "살찐고등어",
-        longitude : 126.88470744711263,
         latitude : 33.526618605492864,
+        longitude : 126.88470744711263,
         address : "제주특별자치도 제주시 구좌읍 해맞이해안로 1708 1층 (우)63363",
         image : "../images/.png",
         kakao_map : "https://place.map.kakao.com/379711544",
@@ -99,8 +99,8 @@ const food = [
     /*
     {
         name : "오드랑베이커리",
-        longitude : ,
         latitude : ,
+        longitude : ,
         address : "",
         image : "../images/.png",
         kakao_map : "",
@@ -111,8 +111,8 @@ const food = [
     },
     {
         name : "산노루",
-        longitude : ,
         latitude : ,
+        longitude : ,
         address : "",
         image : "../images/.png",
         kakao_map : "",
