@@ -96,32 +96,39 @@ const food = [
         star : makeStar(5.0),
         explanation : "트러플 오일, 핑크 소금, 와사비 조합이 흑돼지 돈까스와 만났다. 육즙 가득한 흑돼지 돈까스 맛집!"
     },
-    /*
     {
-        name : "오드랑베이커리",
-        latitude : ,
-        longitude : ,
-        address : "",
-        image : "../images/.png",
-        kakao_map : "",
-        keyword : ["", ""],
-        like : 27,
-        star : makeStar(5.0),
-        explanation : ""
+        name : "정성듬뿍제주국",
+        latitude : 33.514028646873754,
+        longitude : 126.52021343837903,
+        address : "제주특별자치도 제주시 무근성7길 16 1층 (우)63166",
+        image : "./images/food/정성듬뿍제주국.png",
+        kakao_map : "https://place.map.kakao.com/13325715",
+        keyword : ["각재기국", "국"],
+        like : 0,
+        star : 0.0
     },
     {
-        name : "산노루",
-        latitude : ,
-        longitude : ,
-        address : "",
-        image : "../images/.png",
-        kakao_map : "",
-        keyword : ["", ""],
-        like : 27,
-        star : makeStar(5.0),
-        explanation : ""
+        name : "중문수두리보말칼국수",
+        latitude : 33.25156553343916,
+        longitude : 126.42501016693603,
+        address : "제주특별자치도 서귀포시 천제연로 192 1층 (우)63546",
+        image : "./images/food/중문수두리보말칼국수.png",
+        kakao_map : "https://place.map.kakao.com/1148098112",
+        keyword : ["칼국수", "보말칼국수"],
+        like : 0,
+        star : 0.0
+    },
+    {
+        name : "부온",
+        latitude : 33.48941401220383,
+        longitude : 126.53528168640506,
+        address : "제주특별자치도 제주시 구남동2길 26 1층 (우)63232",
+        image : "./images/food/부온.png",
+        kakao_map : "https://place.map.kakao.com/960474998",
+        keyword : ["일식", "소바"],
+        like : 0,
+        star : 0.0
     }
-    */
 ]
 export default food
 

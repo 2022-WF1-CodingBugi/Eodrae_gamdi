@@ -31,6 +31,39 @@ const attraction = [
         keyword : ["산봉우리", "일출"],
         like : 0,
         star : 0.0
+    },
+    {
+        name : "카멜리아 힐",
+        latitude : 33.28964930723648,
+        longitude : 126.37000936062226,
+        address : "제주특별자치도 서귀포시 안덕면 병악로 166 (우)63526",
+        image : "./images/attraction/카멜리아 힐.png",
+        kakao_map : "https://place.map.kakao.com/9461977",
+        keyword : ["핑크뮬리", "억새밭"],
+        like : 0,
+        star : 0.0
+    },
+    {
+        name: "중문대포주상절리대",
+        latitude: 33.237975112719525,
+        longitude: 126.42632227570995,
+        address: "제주특별자치도 서귀포시 이어도로 36-30 (우)63547",
+        image: "./images/attraction/중문대포주상절리대.png",
+        kakao_map: "https://place.map.kakao.com/10793668",
+        keyword: ["일출", "풍경"],
+        like: 0,
+        star: 0.0
+    },
+    {
+        name: "만장굴",
+        latitude: 33.52789508783337,
+        longitude: 126.76934171688357,
+        address: "제주특별자치도 제주시 구좌읍 만장굴길 182 (우)63348",
+        image: "./images/attraction/만장굴.png",
+        kakao_map: "https://place.map.kakao.com/7863269",
+        keyword: ["세계자연유산", "동굴"],
+        like: 0,
+        star: 0.0
     }
 ]
 export default attraction

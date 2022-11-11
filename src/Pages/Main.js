@@ -38,9 +38,9 @@ const Main = ({ onChange = f => f }) => {
     };
     const setBtnActive = () => {
       //id가 @과 .com을 포함하면서 (즉, 이메일 형식이어야 함), 비밀번호 길이가 6자리이상이었을 때
-      idInput.current.value.includes('@') && idInput.current.value.includes(".") && password.length >= 6
-      ? setbtnColor(color[1])
-      : setbtnColor(color[0]);
+        idInput.current.value.includes('@') && idInput.current.value.includes(".") && password.length >= 6
+        ? setbtnColor(color[1])
+        : setbtnColor(color[0]);
     };
 
     const loginBtn = () => {
@@ -96,7 +96,7 @@ const Main = ({ onChange = f => f }) => {
     }, [modalIsOpen]);
 
     useEffect(() => {
-       setModalIsOpen(false)
+        setModalIsOpen(false)
     }, []);
 
     useEffect(() => {
@@ -114,27 +114,27 @@ const Main = ({ onChange = f => f }) => {
             <h1 className="login-modal-logo">나중에 이미지로 바꾸기</h1>
             <div><p className="login-id">아이디</p>
             <input className="login-input-id" ref = {idInput}
-              type="text"
-              placeholder="아이디"
-              id = "id"
-              name = "id"
-              onChange={onChangeId}
+                type="text"
+                placeholder="아이디"
+                id = "id"
+                name = "id"
+                onChange={onChangeId}
             />
             </div>
             <div><p className="login-passw">비밀번호 </p>
             <input className="login-input-passw" ref = {passWInput}
-              type="password"
-              placeholder="비밀번호"
-              id = "password"
-              name = "password"
-              onChange={onChangePassword}
+                type="password"
+                placeholder="비밀번호"
+                id = "password"
+                name = "password"
+                onChange={onChangePassword}
             />
             </div><div>
             <button className="login-btn" type="button" style={{backgroundColor : btnColor}} onClick = {() => btnSubmit()} ref = {btn}>
-             로그인
+                로그인
             </button></div><div>
             <button className="login-back-btn" type="button" onClick={()=> setModalIsOpen(!modalIsOpen)}>
-             닫기
+                닫기
             </button></div></div>
             </div> 
             <header id="header">
@@ -149,16 +149,16 @@ const Main = ({ onChange = f => f }) => {
             <seciton>
                 <Carousel indicators={false}>
                     {
-                        food.map( (d, i) => i < 7 ? createCarousel(d) : null)
+                        food.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
                     }
                     {
-                        activity.map( (d, i) => i < 7 ? createCarousel(d) : null)
+                        activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
                     }
                     {
-                        lodging.map( (d, i) => i < 7 ? createCarousel(d) : null)
+                        lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
                     }
                     {
-                        attraction.map( (d, i) => i < 7 ? createCarousel(d) : null)
+                        attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
                     }
                 </Carousel>
             </seciton>
