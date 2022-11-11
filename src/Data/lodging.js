@@ -7,7 +7,7 @@ const lodging = [
         image : "./images/lodging/와온.png",
         kakao_map : "https://place.map.kakao.com/84554460",
         keyword : ["펜션", "사우나"],
-        like : 0,
+        like : 10,
         star : 0.0
     },
     {
@@ -18,7 +18,7 @@ const lodging = [
         image : "./images/lodging/의귀소담.png",
         kakao_map : "https://place.map.kakao.com/1537209042",
         keyword : ["노천탕", "조식 제공"],
-        like : 0,
+        like : 24,
         star : 0.0
     },
     {
@@ -29,7 +29,7 @@ const lodging = [
         image : "./images/lodging/폴개우엉.png",
         kakao_map : "https://place.map.kakao.com/1879458432",
         keyword : ["서귀포"],
-        like : 0,
+        like : 55,
         star : 0.0
     },
     {
@@ -40,7 +40,7 @@ const lodging = [
         image: "./images/lodging/제주아인.png",
         kakao_map: "https://place.map.kakao.com/1888777377",
         keyword: ["독채펜션", "노천탕"],
-        like: 0,
+        like: 48,
         star: 0.0
     },
     {
@@ -51,7 +51,7 @@ const lodging = [
         image: "./images/lodging/호텔창고펜션.png",
         kakao_map: "https://place.map.kakao.com/2064886161",
         keyword: ["독채펜션", "수영장"],
-        like: 0,
+        like: 4,
         star: 0.0
     },
     {
@@ -62,7 +62,7 @@ const lodging = [
         image: "./images/lodging/게으른오후.png",
         kakao_map: "https://place.map.kakao.com/1187373992",
         keyword: ["에어비앤비", "자쿠지"],
-        like: 0,
+        like: 11,
         star: 0.0
     }
 ]

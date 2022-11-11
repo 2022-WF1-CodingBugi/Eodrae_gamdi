@@ -15,6 +15,7 @@ import attraction from '../Data/attraction';
 
 import "./Main.css";
 import Category from "./Category";
+import { FmdGood } from "@mui/icons-material";
 
 const Main = ({ onChange = f => f }) => {
     const createCarousel = (data) => {
@@ -25,6 +26,11 @@ const Main = ({ onChange = f => f }) => {
             </div>
         )
     }
+
+    food.sort( (a, b) => a.like - b.like );
+    activity.sort( (a, b) => a.like - b.like );
+    lodging.sort( (a, b) => a.like - b.like );
+    attraction.sort( (a, b) => a.like - b.like );
 
     return (
         <>
@@ -40,6 +46,7 @@ const Main = ({ onChange = f => f }) => {
             <seciton>
                 <Carousel indicators={false}>
                     {
+
                         food.map( (d, i) => i < 7 ? createCarousel(d) : null)
                     }
                     {
