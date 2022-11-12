@@ -10,7 +10,7 @@ import food from "../Data/food"
 
 const MapDiv = () => {
     const [inputText, setInputText] = useState("");
-    const [place, setPlace] = useState("");
+    const [place, setPlace] = useState("")
     const [category, setCategory] = useState(activity); // 일단 액티비티로 해놈
     const [selected, setSelected] = useState('activity') //옵션 선택바가 자동으로 바뀌게 수정
 
@@ -27,7 +27,12 @@ const MapDiv = () => {
             case 'food': setCategory(food); break;
             case 'lodging': setCategory(lodging); break;
         }
+    })
+
+    useEffect(() => {
+        setPlace(place)
     }, [place])
+
 
     const onChange = (e) => {
         setInputText(e.target.value);
@@ -103,7 +108,7 @@ const MapDiv = () => {
             </form>
 
             <Map searchPlaces={place} />
-            <List places={category} />
+            <List places={category} setPlace={setPlace} />
         </>
     );
 };
