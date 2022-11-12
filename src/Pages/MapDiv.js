@@ -8,12 +8,11 @@ import attraction from "../Data/attraction";
 import lodging from "../Data/lodging";
 import food from "../Data/food"
 
-const MapDiv = ({history}) => {
+const MapDiv = () => {
     const [inputText, setInputText] = useState("");
     const [place, setPlace] = useState("");
     const [category, setCategory] = useState(activity); // 일단 액티비티로 해놈
     const [selected, setSelected] = useState('activity') //옵션 선택바가 자동으로 바뀌게 수정
-    const [search,setSearch] = useState(true) //검색기능이 최초 한번 실행 이후 안되는걸 고치기 위한 변수
 
     useEffect(() => {
         const temp = sessionStorage.getItem('category');
@@ -28,7 +27,7 @@ const MapDiv = ({history}) => {
             case 'food': setCategory(food); break;
             case 'lodging': setCategory(lodging); break;
         }
-    }, [])
+    }, [place])
 
     const onChange = (e) => {
         setInputText(e.target.value);
@@ -53,20 +52,29 @@ const MapDiv = ({history}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputText !== "") {
-
-            setPlace(category);
-            //카테고리에 맞게 place변경
+            if (inputText != "all") {
+                let tempArray = category.filter(place => place.name.includes(inputText));
+                if (tempArray.length == 0) {
+                    alert('그런 건 읎다')
+                    setPlace("")
+                } else {
+                    setPlace(tempArray);
+                }
+            } else {
+                setPlace(category);
+            }
         } else {
             setPlace("")
         }
-        search?setSearch(false):setSearch(true) //검색 버튼을 누를때마다 search값 바뀌게 설정
+
+        //search ? setSearch(false) : setSearch(true) //검색 버튼을 누를때마다 search값 바뀌게 설정
 
         // setInputText("");
     };
 
     const handleReset = (e) => {
         e.preventDefault();
-        setPlace("removeAll");
+        setPlace("");
         setInputText("");
     };
 
@@ -89,13 +97,13 @@ const MapDiv = ({history}) => {
                 />
                 <button id="searchBtn" type="submit">검색</button>
                 <button id="initializeBtn" type="reset">초기화</button>
-                <Link to = "/sub/addList">
-                <button id="addBtn" type="add" style = {{display : (localStorage.getItem("loginFlag") === "ON")? "" : "none"}}
-                >추가</button></Link>
+                <Link to="/sub/addList">
+                    <button id="addBtn" type="add" style={{ display: (localStorage.getItem("loginFlag") === "ON") ? "" : "none" }}
+                    >추가</button></Link>
             </form>
-            
-            <Map searchPlaces={place} input={inputText} search={search}/>
-            <List places={category} category={selected} /> 
+
+            <Map searchPlaces={place} />
+            <List places={category} />
         </>
     );
 };
