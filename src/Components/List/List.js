@@ -8,7 +8,7 @@ const createArray = length => [...Array(length)];
 
 function List({ places, setPlace }) {
   let listItem = places;
-  let likesArray = listItem.map( item => item.like );
+  let likesArray = listItem.map( item => item.like ); // 좋아요 수 저장하는 배열
   let checkedArray = createArray(listItem.length).map( item => item = false); // 좋아요 클릭 여부를 담는 배열, 처음에 false로 초기화
 
   const [icon, setIcon] = useState("");
@@ -17,20 +17,27 @@ function List({ places, setPlace }) {
 
   // i번째 요소가 클릭 됐을 때
   const toggleLike = (event, i) => {
-    console.log(likes);
     likesArray = [...likes];
-    likesArray[i] += 1;
-    listItem[i].like = likesArray[i];
-    setLikes(likesArray);
+    checkedArray = [...isChecked];
 
-    let checkedCopy = [...isChecked];
-    checkedCopy[i] = !checkedCopy[i];
-    setChecked(checkedCopy);
+    if(checkedArray[i]) {
+      likesArray[i] -= 1;
+    }
+    else {
+      likesArray[i] += 1;
+    }
+    listItem[i].like = likesArray[i];
+    checkedArray[i] = !checkedArray[i];
+    setLikes(likesArray);
+    setChecked(checkedArray);
   }
 
   React.useEffect(() => {
     setLikes(likesArray);
   }, likesArray)
+  React.useEffect(() => {
+    setChecked(checkedArray);
+  }, checkedArray)
 
   React.useEffect(() => {
     let category = sessionStorage.getItem('category');
@@ -81,8 +88,8 @@ function List({ places, setPlace }) {
   const list = listItem.map((item, i) =>
     <div className='List-Item-div'>
       <p className='List-Item'>
-        {icon}   [{item.name}]  
-        {isChecked[i] ? <HeartFilled onClick={(event) => toggleLike(event, i)} /> : <HeartOutlined onClick={(event) => toggleLike(event, i)} /> /* true면 꽉 찬 하트, false면 빈 하트 */} {item.like}
+        {icon}&nbsp;[{item.name}]&nbsp;
+        {isChecked[i] ? <HeartFilled onClick={(event) => toggleLike(event, i)} /> : <HeartOutlined onClick={(event) => toggleLike(event, i)} /> /* true면 꽉 찬 하트, false면 빈 하트 */}&nbsp;{item.like}&nbsp;
         {/*item.star*/}  {item.explanation}
       </p>
       <div className='List-Item-Image-div'>
