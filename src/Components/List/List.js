@@ -1,11 +1,36 @@
 import React from 'react';
 import $ from 'jquery';
 import { useState } from 'react';
+import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import './List.css';
+
+const createArray = length => [...Array(length)];
 
 function List({ places, setPlace }) {
   let listItem = places;
+  let likesArray = listItem.map( item => item.like );
+  let checkedArray = createArray(listItem.length).map( item => item = false); // 좋아요 클릭 여부를 담는 배열, 처음에 false로 초기화
+
   const [icon, setIcon] = useState("");
+  const [isChecked, setChecked] = useState(checkedArray); // 좋아요 버튼이 클릭 됐는지
+  const [likes, setLikes] = useState( likesArray ); // 좋아요 배열 상태 변수로
+
+  // i번째 요소가 클릭 됐을 때
+  const toggleLike = (event, i) => {
+    console.log(likes);
+    likesArray = [...likes];
+    likesArray[i] += 1;
+    listItem[i].like = likesArray[i];
+    setLikes(likesArray);
+
+    let checkedCopy = [...isChecked];
+    checkedCopy[i] = !checkedCopy[i];
+    setChecked(checkedCopy);
+  }
+
+  React.useEffect(() => {
+    setLikes(likesArray);
+  }, likesArray)
 
   React.useEffect(() => {
     let category = sessionStorage.getItem('category');
@@ -53,12 +78,18 @@ function List({ places, setPlace }) {
     });
   }, [places]);
 
-  const list = listItem.map((item) =>
-    <div className='List-Item-div'><p className='List-Item'>
-      {icon}   [{item.name}]  👍🏻 <span className='List-like'>{item.like}</span>   {item.star}  {item.explanation}</p>
+  const list = listItem.map((item, i) =>
+    <div className='List-Item-div'>
+      <p className='List-Item'>
+        {icon}   [{item.name}]  
+        {isChecked[i] ? <HeartFilled onClick={(event) => toggleLike(event, i)} /> : <HeartOutlined onClick={(event) => toggleLike(event, i)} /> /* true면 꽉 찬 하트, false면 빈 하트 */} {item.like}
+        {/*item.star*/}  {item.explanation}
+      </p>
       <div className='List-Item-Image-div'>
         <img className='List-Item-Image' src={item.image} alt={item.name} onClick={() => setPlace([item])} />
-        <p>[ {item.name} ]</p><p>📍 {item.address}</p>🌐 <a href={item.kakao_map}> {item.kakao_map}</a></div></div>)
+        <p>[ {item.name} ]</p><p>📍 {item.address}</p>🌐 <a href={item.kakao_map}> {item.kakao_map}</a>
+      </div>
+    </div>)
   return <div className='List-Container'>{list}</div>
 
 }
