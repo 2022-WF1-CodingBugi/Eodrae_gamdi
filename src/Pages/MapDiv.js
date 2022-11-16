@@ -18,10 +18,6 @@ const MapDiv = () => {
         const temp = sessionStorage.getItem('category');
         setSelected(temp);
         switch (temp) {
-            // 호빈 : List에 카테고리 데이터가 아닌 카테고리 이름만 넘겨주는 것으로 바꾸는건 어떨까요??
-            // 이유 : 데이터를 받아서 그대로 map함수를 적용하면 컴포넌트가 화면에 나타나지 않습니다.
-            // 그래서 현재 List.js에서 카테고리 이름을 받아 매칭되는 데이터를 불러오는 구조여서
-            // 데이터가 두 번 불러와지기 때문입니다. 변경 안해도 코드 동작에는 문제 없습니다.
             case 'activity': setCategory(activity); break;
             case 'attraction': setCategory(attraction); break;
             case 'food': setCategory(food); break;
