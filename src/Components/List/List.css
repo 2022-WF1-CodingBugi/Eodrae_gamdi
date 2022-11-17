@@ -34,7 +34,7 @@ body {
     background-position: center;
     */
     width: 400px;
-    height: 500px;
+    height: 600px;
 
     margin-top: 50px;
     margin-bottom: 50px;
@@ -63,8 +63,7 @@ body {
 
     padding-left: 25px;
     padding-right: 25px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
 
     margin-left: 20px;
     margin-right: 20px;
@@ -86,7 +85,7 @@ body {
     visibility: hidden;
     height: 0vh;
     transition: height 0.3s;
-    width: 75%;
+    width: 95%;
     background-color: white;
     margin: 0 auto;
     padding-top: 5px;
