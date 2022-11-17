@@ -6,7 +6,8 @@ import List from "../Components/List/List"; // foodList -> List로 변경
 import activity from "../Data/activity";
 import attraction from "../Data/attraction";
 import lodging from "../Data/lodging";
-import food from "../Data/food"
+import food from "../Data/food";
+import searchIcon from "../Resources/Images/background-image/searchIcon.png";
 
 const MapDiv = () => {
     const [inputText, setInputText] = useState("");
@@ -83,24 +84,30 @@ const MapDiv = () => {
     return (
         <>
             <form className="inputForm" onSubmit={handleSubmit} onReset={handleReset}>
-
+                <div className="searchDiv">
                 <select onChange={changeCategory} id="categorySelect" value={selected} >
-                    <option value="activity">액티비티</option>
-                    <option value="food">맛집</option>
-                    <option value="lodging">숙소</option>
-                    <option value="attraction">명소</option>
+                    <option value="activity">액티비티 🪂</option>
+                    <option value="food">맛집 🍚</option>
+                    <option value="lodging">숙소 🏠</option>
+                    <option value="attraction">명소 🏔️</option>
                 </select>
+                <div className="searchInputDiv">
                 <input
                     id="searchInput" type="text" size="50" defaultValue=""
                     placeholder="Search Place..."
                     onChange={onChange}
                     value={inputText}
                 />
-                <button id="searchBtn" type="submit">검색</button>
+                <img id="searchIcon" src={searchIcon}/>
+                </div>
+                <div className="buttonDiv">
+                <button type="submit" style={{display:"none"}}>enterKey시 검색할 수 있는 형식상 submit 버튼</button>
                 <button id="initializeBtn" type="reset">초기화</button>
                 <Link to="/sub/addList">
-                    <button id="addBtn" type="add" style={{ display: (localStorage.getItem("loginFlag") === "ON") ? "" : "none" }}
+                    <button id="addBtn" type="add" disabled={(localStorage.getItem("loginFlag") === "ON") ? false : true} style={{ display: (localStorage.getItem("loginFlag") === "ON") ? "" : "none" }}
                     >추가</button></Link>
+                </div>
+                </div>
             </form>
 
             <Map searchPlaces={place} />
