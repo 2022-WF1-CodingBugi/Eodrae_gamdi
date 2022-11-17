@@ -5,29 +5,36 @@ import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import './List.css';
 
 const createArray = length => [...Array(length)];
+let likesArray;
+let checkedArray;
 
 function List({ places, setPlace }) {
   let listItem = places;
-  let likesArray = listItem.map( item => item.like ); // 좋아요 수 저장하는 배열
-  let checkedArray = createArray(listItem.length).map( item => item = false); // 좋아요 클릭 여부를 담는 배열, 처음에 false로 초기화
+  likesArray = listItem.map( item => item.like ); // 좋아요 수 저장하는 배열
+  checkedArray = createArray(listItem.length).map( item => item = false); // 좋아요 클릭 여부를 담는 배열, 처음에 false로 초기화
 
   const [icon, setIcon] = useState("");
   const [isChecked, setChecked] = useState(checkedArray); // 좋아요 버튼이 클릭 됐는지
   const [likes, setLikes] = useState( likesArray ); // 좋아요 배열 상태 변수로
 
-  // i번째 요소가 클릭 됐을 때
+  // i번째 리스트가 클릭 됐을 때
   const toggleLike = (event, i) => {
+    // 상태 변수에 있는 배열 복사
     likesArray = [...likes];
     checkedArray = [...isChecked];
 
-    if(checkedArray[i]) {
+    if(checkedArray[i]) { // 좋아요 취소
       likesArray[i] -= 1;
     }
-    else {
+    else { // 좋아요
       likesArray[i] += 1;
     }
+
+    // 복사한 배열에서 클릭한 요소의 값을 변경
     listItem[i].like = likesArray[i];
     checkedArray[i] = !checkedArray[i];
+
+    // 복사한 배열로 상태 변수 변경
     setLikes(likesArray);
     setChecked(checkedArray);
   }
@@ -83,6 +90,11 @@ function List({ places, setPlace }) {
         });
       }
     });
+
+    // 좋아요 관련 배열 초기화
+    setLikes(listItem.map( item => item.like ))
+    setChecked(checkedArray.map(item => item = false));
+
   }, [places]);
 
   const list = listItem.map((item, i) =>
