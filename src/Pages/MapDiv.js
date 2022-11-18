@@ -14,21 +14,37 @@ const MapDiv = () => {
     const [place, setPlace] = useState("")
     const [category, setCategory] = useState(activity); // 일단 액티비티로 해놈
     const [selected, setSelected] = useState('activity') //옵션 선택바가 자동으로 바뀌게 수정
-
+    
     useEffect(() => {
         const temp = sessionStorage.getItem('category');
         setSelected(temp);
+        const data=JSON.parse(localStorage.getItem(temp))
+        if(data!=undefined){
+            setCategory(data)
+             // 성관: 그냥 스테이트로 로컬스토리지 데이터 받아와서 카테고리로 설정해주면 되는거였음...
+             // setPlace(category) <- 이거는 첫화면에 마커 다 뜨게하는건데 맛집은 안뜸. 아마 우 치면 안나오는거랑 같은 오류인듯 
+    
+            }
+        else{
         switch (temp) {
             case 'activity': setCategory(activity); break;
             case 'attraction': setCategory(attraction); break;
             case 'food': setCategory(food); break;
             case 'lodging': setCategory(lodging); break;
         }
-    })
+    }
+        //const i = data.length - attraction.length
+        // for (let i = 0; i<data.length; i++) {
+        //     attraction.splice(i, 1, data[i])
+        // }
+        
+       
+    },[])
 
     useEffect(() => {
         setPlace(place)
-    }, [place])
+    }, [selected])
+    
 
 
     const onChange = (e) => {
@@ -103,7 +119,7 @@ const MapDiv = () => {
                 <div className="buttonDiv">
                 <button type="submit" style={{display:"none"}}>enterKey시 검색할 수 있는 형식상 submit 버튼</button>
                 <button id="initializeBtn" type="reset">초기화</button>
-                <Link to="/sub/addList">
+                <Link to="/sub/addplace">
                     <button id="addBtn" type="add" disabled={(localStorage.getItem("loginFlag") === "ON") ? false : true} style={{ display: (localStorage.getItem("loginFlag") === "ON") ? "" : "none" }}
                     >추가</button></Link>
                 </div>

@@ -102,11 +102,30 @@ function List({ places, setPlace }) {
     // 좋아요 관련 배열 초기화
     setLikes(listItem.map( item => item.like ))
     setChecked(checkedArray.map(item => item = false));
+  //   const data = listItem.map((item,i)=>{
+  //     return(
+  //     {name:`${item.name}`,
+  //     latitude: `${item.latitude}`,
+  //     longitude: `${item.longitude}`,
+  //     address: `${item.address}`,
+  //     image: item.image,
+  //     kakao_map: item.kakao_map,
+  //     keyword: ["카트", "테마파크"],
+  //     like: likesArray[i],
+  //     star: 0.0,
+  //     explanation:`${item.explanation}`
+  // }
+  //     )
+  //   })
+  //   localStorage.setItem(sessionStorage.getItem('category'),JSON.stringify(data))
+   // 성관 : 로컬스토리지에서 좋아요 값만 쏙 바꿀수가 없어가지고 위처럼 아예 데이터 통째로 바꿔야될거 같은데 잘 안되네요 ㅜ
+   //       제가 좋아요 기능을 잘못이해하고 있어서 그럴수도 있으니까 찬주님이 한번 시도해주세요...!
+
 
   }, [places]);
 
   const list = listItem.map((item, i) =>
-    <div className='List-Item-div'>
+    <div className='List-Item-div' onClick={() => setPlace([item])}>
       <p className='List-Item'>
         {icon}&nbsp;
         [{item.name}]<br></br><br></br>
@@ -117,7 +136,7 @@ function List({ places, setPlace }) {
       </p>
       <img className='arrow_image' src='./images/down-arrow.png' style={{width: "20px", height: "20px"}}/>
       <div className='List-Item-Image-div'>
-        <img className='List-Item-Image' src={item.image} alt={item.name} onClick={() => setPlace([item])} />
+        <img className='List-Item-Image' src={item.image} alt={item.name}  />
         <p>[ {item.name} ]</p><p>📍 {item.address}</p>🌐 <a href={item.kakao_map}> {item.kakao_map}</a>
       </div>
     </div>)
