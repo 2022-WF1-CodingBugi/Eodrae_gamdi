@@ -38,7 +38,7 @@ const MapDiv = () => {
         //     attraction.splice(i, 1, data[i])
         // }
         
-       
+    
     },[])
 
     useEffect(() => {

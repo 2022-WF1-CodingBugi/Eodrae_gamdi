@@ -4,9 +4,11 @@ import attraction from "../../Data/attraction";
 import lodging from "../../Data/lodging";
 import food from "../../Data/food"
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const AddNewPlace = ({addingPlace}) =>{
+    let navigate = useNavigate()
     console.log(addingPlace)
     const [InputText, setInputText] = useState('')
     const [selected, setSelected] = useState('')
@@ -54,6 +56,8 @@ const AddNewPlace = ({addingPlace}) =>{
                 // 성관 :추가버튼 누르면 로컬스토리지에 있는 데이터 값을 addData()에 파라미터로 전달
             }
         setInputText('')
+        navigate('/sub')
+        window.location.reload()
     }
     return(
         <>
@@ -68,7 +72,7 @@ const AddNewPlace = ({addingPlace}) =>{
                 </select>
                 <input placeholder="한줄평" onChange={onChange} value={InputText}>
                 </input>
-                <button type="submit">추가</button>
+                <button type="submit" >추가</button>
             </form>
             
             </>

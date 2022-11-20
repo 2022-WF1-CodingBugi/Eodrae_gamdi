@@ -8,10 +8,32 @@ const createArray = length => [...Array(length)];
 let likesArray;
 let checkedArray;
 
+$(function () {
+  let list = document.getElementsByClassName("List-Item");
+  let arrowList = document.getElementsByClassName("arrow_image");
+  let i;
+
+  for (i = 0; i < 30; i++) {
+    arrowList[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var listImage = this.nextElementSibling;
+      if (listImage.style.visibility === "visible") {
+        listImage.style.height = "0vh";
+        listImage.style.visibility = "hidden";
+      }
+      else {
+        listImage.style.height = "50vh";
+        listImage.style.visibility = "visible";
+      }
+    });
+  }
+});
+
 function List({ places, setPlace }) {
-  let listItem = places;
+  let listItem = JSON.parse(localStorage.getItem(sessionStorage.getItem('category')));
   likesArray = listItem.map( item => item.like ); // 좋아요 수 저장하는 배열
   checkedArray = createArray(listItem.length).map( item => item = false); // 좋아요 클릭 여부를 담는 배열, 처음에 false로 초기화
+  console.log(listItem)
 
   const [icon, setIcon] = useState("");
   const [isChecked, setChecked] = useState(checkedArray); // 좋아요 버튼이 클릭 됐는지
@@ -78,34 +100,14 @@ function List({ places, setPlace }) {
         .setAttribute("style", "visibility : hidden");
     }
 
-    $(function () {
-      let list = document.getElementsByClassName("List-Item");
-      let arrowList = document.getElementsByClassName("arrow_image");
-      let i;
-
-      for (i = 0; i < list.length; i++) {
-        arrowList[i].addEventListener("click", function () {
-          this.classList.toggle("active");
-          var listImage = this.nextElementSibling;
-          if (listImage.style.visibility === "visible") {
-            listImage.style.height = "0vh";
-            listImage.style.visibility = "hidden";
-          }
-          else {
-            listImage.style.height = "50vh";
-            listImage.style.visibility = "visible";
-          }
-        });
-      }
-    });
 
     // 좋아요 관련 배열 초기화
     setLikes(listItem.map( item => item.like ))
     setChecked(checkedArray.map(item => item = false));
   //   const data = listItem.map((item,i)=>{
-  //     return(
+  //     eturn(
   //     {name:`${item.name}`,
-  //     latitude: `${item.latitude}`,
+  //     latitude: r`${item.latitude}`,
   //     longitude: `${item.longitude}`,
   //     address: `${item.address}`,
   //     image: item.image,
@@ -134,7 +136,7 @@ function List({ places, setPlace }) {
         {item.like}</p>
         {/* 별점? 저장? item.star*/}
       </p>
-      <img className='arrow_image' src='./images/down-arrow.png' style={{width: "20px", height: "20px"}}/>
+      <img className='arrow_image' src='./images/down-arrow.png' style={{width: "20px", height: "20px"}} onClick={() => setPlace([item])}/>
       <div className='List-Item-Image-div'>
         <img className='List-Item-Image' src={item.image} alt={item.name}  />
         <p>[ {item.name} ]</p><p>📍 {item.address}</p>🌐 <a href={item.kakao_map}> {item.kakao_map}</a>

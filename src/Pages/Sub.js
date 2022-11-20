@@ -3,10 +3,11 @@ import "./Sub.css"
 import MapDiv from "./MapDiv";
 import main_logo from "./images/main_logo.png"
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 
 const Sub = () => {
-    
+   
     let navigate = useNavigate()
     //sub페이지에서 로고 누르면 홈으로 이동하게
     const init = () => {
