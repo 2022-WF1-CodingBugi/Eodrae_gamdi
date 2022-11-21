@@ -3,10 +3,10 @@ import $ from 'jquery';
 import { useState } from 'react';
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import './List.css';
+import { CompareSharp } from '@mui/icons-material';
 
 const createArray = length => [...Array(length)];
-let likesArray;
-let checkedArray;
+let likeChecked;
 
 $(function () {
   let list = document.getElementsByClassName("List-Item");
@@ -31,49 +31,32 @@ $(function () {
 
 function List({ places, setPlace }) {
   let listItem = JSON.parse(localStorage.getItem(sessionStorage.getItem('category')));
-  likesArray = listItem.map( item => item.like ); // 좋아요 수 저장하는 배열
-  checkedArray = createArray(listItem.length).map( item => item = false); // 좋아요 클릭 여부를 담는 배열, 처음에 false로 초기화
-  console.log(listItem)
+  likeChecked = JSON.parse(localStorage.getItem(`${sessionStorage.getItem('category')}Checked`)); // 좋아요 체크 여부 로컬 스토리지에서 가져오기
 
   const [icon, setIcon] = useState("");
-  const [isChecked, setChecked] = useState(checkedArray); // 좋아요 버튼이 클릭 됐는지
-  const [likes, setLikes] = useState( likesArray ); // 좋아요 배열 상태 변수로
+  const [checked, setChecked] = useState(likeChecked);
 
-  const writeDataFile =  (fileName, data) => {
-    if(fileName === "") return false;
-
-    const content = {data};
-    console.log(content);
-  }
-
-  // i번째 리스트가 클릭 됐을 때
+  // 하트가 클릭 됐을 때 실행되는 함수
   const toggleLike = (event, i) => {
-    // 상태 변수에 있는 배열 복사
-    likesArray = [...likes];
-    checkedArray = [...isChecked];
+    likeChecked = JSON.parse(localStorage.getItem(`${sessionStorage.getItem('category')}Checked`));
 
-    if(checkedArray[i]) { // 좋아요 취소
-      likesArray[i] -= 1;
+     // 좋아요 취소
+    if(likeChecked[i]) {
+      listItem[i].like -= 1; // 좋아요 수 감소
     }
-    else { // 좋아요
-      likesArray[i] += 1;
+     // 좋아요
+    else {
+      listItem[i].like += 1; // 좋아요 수 증가
     }
+    likeChecked[i] = !likeChecked[i]; // 체크 여부 바꿔주기
 
-    // 복사한 배열에서 클릭한 요소의 값을 변경
-    listItem[i].like = likesArray[i];
-    checkedArray[i] = !checkedArray[i];
+    // 로컬스토리지에 데이터, 좋아요 여부 저장
+    localStorage.setItem(sessionStorage.getItem('category'), JSON.stringify(listItem));
+    localStorage.setItem(`${sessionStorage.getItem('category')}Checked`, JSON.stringify(likeChecked));
 
     // 복사한 배열로 상태 변수 변경
-    setLikes(likesArray);
-    setChecked(checkedArray);
+    setChecked(likeChecked);
   }
-
-  React.useEffect(() => {
-    setLikes(likesArray);
-  }, likesArray)
-  React.useEffect(() => {
-    setChecked(checkedArray);
-  }, checkedArray)
 
   React.useEffect(() => {
     let category = sessionStorage.getItem('category');
@@ -102,28 +85,7 @@ function List({ places, setPlace }) {
 
 
     // 좋아요 관련 배열 초기화
-    setLikes(listItem.map( item => item.like ))
-    setChecked(checkedArray.map(item => item = false));
-  //   const data = listItem.map((item,i)=>{
-  //     eturn(
-  //     {name:`${item.name}`,
-  //     latitude: r`${item.latitude}`,
-  //     longitude: `${item.longitude}`,
-  //     address: `${item.address}`,
-  //     image: item.image,
-  //     kakao_map: item.kakao_map,
-  //     keyword: ["카트", "테마파크"],
-  //     like: likesArray[i],
-  //     star: 0.0,
-  //     explanation:`${item.explanation}`
-  // }
-  //     )
-  //   })
-  //   localStorage.setItem(sessionStorage.getItem('category'),JSON.stringify(data))
-   // 성관 : 로컬스토리지에서 좋아요 값만 쏙 바꿀수가 없어가지고 위처럼 아예 데이터 통째로 바꿔야될거 같은데 잘 안되네요 ㅜ
-   //       제가 좋아요 기능을 잘못이해하고 있어서 그럴수도 있으니까 찬주님이 한번 시도해주세요...!
-
-
+    setChecked(JSON.parse(localStorage.getItem(`${localStorage.getItem('category')}Checked`)));
   }, [places]);
 
   const list = listItem.map((item, i) =>
@@ -132,7 +94,7 @@ function List({ places, setPlace }) {
         {icon}&nbsp;
         [{item.name}]<br></br><br></br>
         {item.explanation}
-        <p style={{display: "inline-block", float: "right"}}>{isChecked[i] ? <HeartFilled onClick={(event) => toggleLike(event, i)} /> : <HeartOutlined onClick={(event) => toggleLike(event, i)} /> /* true면 꽉 찬 하트, false면 빈 하트 */}&nbsp;
+        <p style={{display: "inline-block", float: "right"}}>{JSON.parse(localStorage.getItem(`${sessionStorage.getItem('category')}Checked`))[i] ? <HeartFilled onClick={(event) => toggleLike(event, i)} /> : <HeartOutlined onClick={(event) => toggleLike(event, i)} /> /* true면 꽉 찬 하트, false면 빈 하트 */}&nbsp;
         {item.like}</p>
         {/* 별점? 저장? item.star*/}
       </p>

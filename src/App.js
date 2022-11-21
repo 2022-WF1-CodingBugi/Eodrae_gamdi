@@ -9,7 +9,15 @@ import food from './Data/food';
 import lodging from './Data/lodging';
 import { useEffect } from 'react';
 
+const createArray = length => [...Array(length)];
+
 const App = () => {
+    // 좋아요 체크 여부 배열 전부 false로 초기화 시켜서 로컬 스토리지에 저장
+    let foodChecked = createArray(food.length).map( item => item = false);
+    let activityChecked = createArray(activity.length).map( item => item = false);
+    let lodgingChecked = createArray(lodging.length).map( item => item = false);
+    let attractionChecked = createArray(attraction.length).map( item => item = false);
+
     useEffect(()=>{
         if(localStorage.activity == undefined){
             localStorage.setItem('activity',JSON.stringify(activity))
@@ -23,6 +31,10 @@ const App = () => {
         if(localStorage.lodging == undefined){
             localStorage.setItem('lodging',JSON.stringify(lodging))
         }
+        localStorage.setItem('foodChecked', JSON.stringify(foodChecked));
+        localStorage.setItem('activityChecked', JSON.stringify(activityChecked));
+        localStorage.setItem('lodgingChecked', JSON.stringify(lodgingChecked));
+        localStorage.setItem('attractionChecked', JSON.stringify(attractionChecked));
     },[]) // 성관 :처음 렌더링될때 로컬스토리지에 값이 undefined 인 경우 우리가 초기 설정해둔 데이터를 로컬스토리지에 저장
     return (
         <div style={{ textAlign: 'center' }}>
