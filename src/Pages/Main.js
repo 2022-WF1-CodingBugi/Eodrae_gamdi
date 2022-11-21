@@ -226,72 +226,32 @@ const Main = ({ onChange = f => f }) => {
             <div><img className="foodTop10" src = {foodTop10}/></div>
             <seciton>
                 <Carousel indicators={false}>
-                    {
-                        food.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
+                    { food.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 5 ? createCarousel(d) : null) }
+                    { food.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 5 && i < 10 ? createCarousel(d) : null) }
                 </Carousel>
             </seciton>
 
             <div><img className="activityTop10" src = {activityTop10}/></div>
             <seciton>
                 <Carousel indicators={false}>
-                    {
-                        food.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
+                    { activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 5 ? createCarousel(d) : null) }
+                    { activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 5 && i < 10 ? createCarousel(d) : null) }
                 </Carousel>
             </seciton>
 
             <div><img className="lodgingTop10" src = {lodgingTop10}/></div>
             <seciton>
                 <Carousel indicators={false}>
-                    {
-                        food.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
+                    { lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 5 ? createCarousel(d) : null) }
+                    { lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 5 && i < 10 ? createCarousel(d) : null) }
                 </Carousel>
             </seciton>
 
             <div><img className="attractionTop10" src = {attractionTop10}/></div>
             <seciton>
                 <Carousel indicators={false}>
-                    {
-                        food.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
-                    {
-                        attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 7 ? createCarousel(d) : null)
-                    }
+                    { attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 5 ? createCarousel(d) : null) }
+                    { attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 5 && i < 10 ? createCarousel(d) : null) }
                 </Carousel>
             </seciton>
             <img className = "mainBottomBackground" src={mainBottomBackground}/>
