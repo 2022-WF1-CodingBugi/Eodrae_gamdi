@@ -5,9 +5,6 @@ import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import './List.css';
 import { CompareSharp } from '@mui/icons-material';
 
-const createArray = length => [...Array(length)];
-let likeChecked;
-
 $(function () {
   let list = document.getElementsByClassName("List-Item");
   let arrowList = document.getElementsByClassName("arrow_image");
@@ -31,7 +28,7 @@ $(function () {
 
 function List({ places, setPlace }) {
   let listItem = JSON.parse(localStorage.getItem(sessionStorage.getItem('category')));
-  likeChecked = JSON.parse(localStorage.getItem(`${sessionStorage.getItem('category')}Checked`)); // 좋아요 체크 여부 로컬 스토리지에서 가져오기
+  let likeChecked = JSON.parse(localStorage.getItem(`${sessionStorage.getItem('category')}Checked`)); // 좋아요 체크 여부 로컬 스토리지에서 가져오기
 
   const [icon, setIcon] = useState("");
   const [checked, setChecked] = useState(likeChecked);
