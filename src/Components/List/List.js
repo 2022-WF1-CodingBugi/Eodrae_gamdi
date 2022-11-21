@@ -36,6 +36,7 @@ function List({ places, setPlace }) {
   // 하트가 클릭 됐을 때 실행되는 함수
   const toggleLike = (event, i) => {
     likeChecked = JSON.parse(localStorage.getItem(`${sessionStorage.getItem('category')}Checked`));
+    console.log(likeChecked);
 
      // 좋아요 취소
     if(likeChecked[i]) {
