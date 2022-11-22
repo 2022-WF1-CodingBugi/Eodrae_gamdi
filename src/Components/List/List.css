@@ -33,13 +33,12 @@ body {
     background-size: cover;
     background-position: center;
     */
-    width: 400px;
-    height: 600px;
-
-    margin-top: 50px;
+    width: 30vw;
+    height: 560px;
+    margin-top: 20px;
     margin-bottom: 50px;
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 50px;
     
     overflow-y: scroll;
     -ms-overflow-style: none;
@@ -48,6 +47,7 @@ body {
 .List-Container::-webkit-scrollbar {
     display: none;
 }
+
 
 .List-Item {
     text-align: justify;
@@ -82,9 +82,6 @@ body {
 
 .List-Item-Image-div {
     background-color: white;
-    visibility: hidden;
-    height: 0vh;
-    transition: height 0.3s;
     width: 95%;
     background-color: white;
     margin: 0 auto;
@@ -110,4 +107,8 @@ body {
     right: 10%;
     padding: 15px;
     margin: 0 auto;
+}
+
+.arrow_image{
+    cursor: pointer;
 }

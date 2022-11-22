@@ -14,13 +14,11 @@ $(function () {
     arrowList[i].addEventListener("click", function () {
       this.classList.toggle("active");
       var listImage = this.nextElementSibling;
-      if (listImage.style.visibility === "visible") {
-        listImage.style.height = "0vh";
-        listImage.style.visibility = "hidden";
+      if (listImage.style.display === "block") {
+        listImage.style.display = "none";
       }
       else {
-        listImage.style.height = "50vh";
-        listImage.style.visibility = "visible";
+        listImage.style.display = "block";
       }
     });
   }
@@ -76,19 +74,16 @@ function List({ places, setPlace }) {
 
     for (let i = 0; i < listItem.length; i++) {
       document.getElementsByClassName('List-Item-Image-div')[i]
-        .setAttribute("style", "height : 0vh");
-      document.getElementsByClassName('List-Item-Image-div')[i]
-        .setAttribute("style", "visibility : hidden");
+        .setAttribute("style", "display : none");
     }
-
 
     // 좋아요 관련 배열 초기화
     setChecked(JSON.parse(localStorage.getItem(`${localStorage.getItem('category')}Checked`)));
   }, [places]);
 
   const list = listItem.map((item, i) =>
-    <div className='List-Item-div' onClick={() => setPlace([item])}>
-      <p className='List-Item'>
+    <div className='List-Item-div'>
+      <p className='List-Item' onClick={() => setPlace([item])}>
         {icon}&nbsp;
         [{item.name}]<br></br><br></br>
         {item.explanation}
@@ -103,7 +98,6 @@ function List({ places, setPlace }) {
       </div>
     </div>)
   return <div className='List-Container'>{list}</div>
-
 }
 
 export default List

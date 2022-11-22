@@ -129,9 +129,11 @@ const Map = ({ searchPlaces }) => {
 
     return (
         <div id='map' style={{
-            width: '60%',
-            height: '500px',
-            display: 'inline-block'
+            width: '50vw',
+            height: '550px',
+            display: 'inline-block',
+            marginTop : 100,
+            marginRight : 0
         }}></div>
     );
 }

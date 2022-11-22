@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import Carousel from "react-material-ui-carousel";
+import Swal from "sweetalert2"; // 알림창 모듈
 
 //import main_logo from "./images/main_logo.png"
 import food_category from "./images/food.png"
@@ -87,12 +88,21 @@ const Main = ({ onChange = f => f }) => {
     }
     const btnSubmit = () => {
         if (id === User.id && pw === User.pw) {
+            Swal.fire({
+                icon: 'success',    
+                text: '로그인 성공',  
+                confirmButtonText: "확인"
+            });
             localStorage.setItem("loginFlag", "ON");
             setLoginSuccess(true)
         }
         else {
-            alert("비밀번호가 틀렸습니다. 다시 시도하세요.");
             setLoginSuccess(false);
+            Swal.fire({
+                icon: 'error',    
+                text: '비밀번호가 틀렸습니다. 다시 시도하세요.',  
+                confirmButtonText: "확인"
+            });
         }
     }
 
@@ -194,7 +204,7 @@ const Main = ({ onChange = f => f }) => {
             )}
            </div>
             <div>
-            <button className="login-btn" type="button" disabled={notAllow} onClick = {() => btnSubmit()} ref = {btn}>
+            <button className="login-btn" type="submit" disabled={notAllow} onClick = {() => btnSubmit()} ref = {btn}>
                 로그인
             </button></div>
 

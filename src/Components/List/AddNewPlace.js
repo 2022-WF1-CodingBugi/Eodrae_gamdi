@@ -29,9 +29,9 @@ const AddNewPlace = ({addingPlace}) =>{
         latitude: `${addingPlace.y}`,
         longitude: `${addingPlace.x}`,
         address: `${addingPlace.road_address_name}`,
-        image: "./images/activity/9.81파크.png",
-        kakao_map: "https://place.map.kakao.com/1868828759",
-        keyword: ["카트", "테마파크"],
+        image: "./images/error-Image.png",
+        kakao_map: "준비 중입니다",
+        keyword: ["", ""],
         like: 0,
         star: 0.0,
         explanation:`${InputText}`
@@ -61,20 +61,29 @@ const AddNewPlace = ({addingPlace}) =>{
     }
     return(
         <>
-            <div>{addingPlace.place_name}</div>
+            <div className="addNewPlaceDiv">
+            <div  className="addNewPlaceNameDiv" style={{ marginTop: '30px',  marginBottom: '20px' }}>
+                "{addingPlace.place_name}"을/를 추가합니다</div>
             <form onSubmit={handleSubmit}>
+            <div className="searchDiv" style={{marginBottom: '10px' }}>
             <select onChange={changeCategory} id="categorySelect" value={selected} >
                     <option>선택</option>
-                    <option value="activity">액티비티</option>
-                    <option value="food">맛집</option>
-                    <option value="lodging">숙소</option>
-                    <option value="attraction">명소</option>
+                    <option value="activity">액티비티 🪂</option>
+                    <option value="food">맛집 🍚</option>
+                    <option value="lodging">숙소 🏠</option>
+                    <option value="attraction">명소 🏔️</option>
                 </select>
-                <input placeholder="한줄평" onChange={onChange} value={InputText}>
+                <div className="searchInputDiv">
+                <input id = "searchInput" 
+                    placeholder=" 한줄평을 입력하세요" 
+                    onChange={onChange} value={InputText}>
                 </input>
-                <button type="submit" >추가</button>
+                </div>
+                <div className="addButtonDiv">
+                <button id="addWithCommentBtn" type="submit">추가</button>
+                </div></div>
             </form>
-            
+            </div>
             </>
     )
 }

@@ -94,9 +94,8 @@ const AddPlaceMap = ({ searchPlace }) => {
   }, [searchPlace])
 
   return (
-    <div>
-      <div
-        id="myMap"
+    <div className = "addPlaceMapDiv">
+      <div id="myMap"
         style={{
           width: '50%',
           height: '500px',
@@ -108,21 +107,21 @@ const AddPlaceMap = ({ searchPlace }) => {
         width:'40%'
         }} >
         {Places.map((item, i) => (
-          <div key={i} id="placeCard" style={{ marginTop: '20px' }}>
-            <span>{i + 1}</span>
-            <div >
-              <h5>{item.place_name}</h5>
+          <div key={i} id="placeCard" style={{ marginTop: '5px',  marginBottom: '20px' }}>
+            <span style={{ fontSize: 'x-small'}}>[ {i + 1} ]</span>
+            <div>
+              <div style={{ marginTop: '10px',  marginBottom: '10px' }}>{item.place_name}</div>
               {item.road_address_name ? (
-                <div>
-                  <span>{item.road_address_name}</span>
-                  <span>{item.address_name}</span>
+                <div style={{ padding: '0px 10px 0px 10px', fontSize: 'small'}}>
+                  <div style={{fontSize: 'small'}}>📍 {item.road_address_name}</div>
+                  <span style={{fontSize: 'small'}}>📍 {item.address_name}</span>
                 </div>
               ) : (
-                <span>{item.address_name}</span>
+                <span style={{fontSize: 'small'}}>📍 {item.address_name}</span>
               )}
-              <span>{item.phone}</span>
+              <span style={{fontSize: 'small'}}>📞 {item.phone}</span>
               <br></br>
-              <button key ={i} onClick={()=>{
+              <button id = "addResultListBtn" key ={i} onClick={()=>{
             setAddingPlace(Places[i])
             // navigate("/sub/addplace/addnewplace")
             console.log(addingPlace)
@@ -135,7 +134,6 @@ const AddPlaceMap = ({ searchPlace }) => {
         
         <div id="pagination"></div>
       </div>
-      
       {modal?(
         <AddNewPlace addingPlace={addingPlace}/>
       ):

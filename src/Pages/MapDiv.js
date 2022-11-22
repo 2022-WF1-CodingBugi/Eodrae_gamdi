@@ -8,6 +8,7 @@ import attraction from "../Data/attraction";
 import lodging from "../Data/lodging";
 import food from "../Data/food";
 import searchIcon from "../Resources/Images/background-image/searchIcon.png";
+import Swal from "sweetalert2"; // 알림창 모듈
 
 const MapDiv = () => {
     const [inputText, setInputText] = useState("");
@@ -73,8 +74,12 @@ const MapDiv = () => {
             if (inputText != "all") {
                 let tempArray = category.filter(place => place.name.includes(inputText));
                 if (tempArray.length == 0) {
-                    alert('그런 건 읎다')
                     setPlace("")
+                    Swal.fire({
+                        icon: 'error',    
+                        text: '검색하신 장소가 존재하지 않습니다.',  
+                        confirmButtonText: "확인"
+                    });
                 } else {
                     setPlace(tempArray);
                 }
@@ -110,11 +115,11 @@ const MapDiv = () => {
                 <div className="searchInputDiv">
                 <input
                     id="searchInput" type="text" size="50" defaultValue=""
-                    placeholder="Search Place..."
+                    placeholder=" Search Place..."
                     onChange={onChange}
                     value={inputText}
                 />
-                <img id="searchIcon" src={searchIcon}/>
+                <img id="searchIcon" onClick={handleSubmit} src={searchIcon}/>
                 </div>
                 <div className="buttonDiv">
                 <button type="submit" style={{display:"none"}}>enterKey시 검색할 수 있는 형식상 submit 버튼</button>
@@ -125,9 +130,10 @@ const MapDiv = () => {
                 </div>
                 </div>
             </form>
-
+            <div className="mapListDiv">
             <Map searchPlaces={place} />
             <List places={category} setPlace={setPlace} />
+            </div>
         </>
     );
 };
