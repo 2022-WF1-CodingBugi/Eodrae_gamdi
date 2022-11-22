@@ -119,7 +119,7 @@ const Map = ({ searchPlaces }) => {
                 infoWindow.open(map, marker);
                 var latLng = marker.getPosition();
                 //map.getLevel() < 3 ? null : map.setLevel(3);
-                map.setLevel(3);
+                map.setLevel(7);
 
                 panTo(latLng.getLat(), latLng.getLng());
             }

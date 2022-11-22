@@ -30,7 +30,7 @@ const AddNewPlace = ({addingPlace}) =>{
         longitude: `${addingPlace.x}`,
         address: `${addingPlace.road_address_name}`,
         image: "./images/error-Image.png",
-        kakao_map: "준비 중입니다",
+        kakao_map: `${addingPlace.place_url}`,
         keyword: ["", ""],
         like: 0,
         star: 0.0,

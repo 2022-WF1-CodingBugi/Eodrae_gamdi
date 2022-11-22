@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Map from "../Components/Map/Map";
 import "./Sub.css"
+import $ from 'jquery';
 import List from "../Components/List/List"; // foodList -> List로 변경
 import activity from "../Data/activity";
 import attraction from "../Data/attraction";
@@ -64,9 +65,11 @@ const MapDiv = () => {
             case 'lodging': setCategory(lodging); break;
         }
         setSelected(select)
+        $(".List-Container").animate({ scrollTop: 0 }, "fast"); 
 
         //카테고리에 따라 데이터 선택
     }
+   
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -100,6 +103,10 @@ const MapDiv = () => {
         setPlace("");
         setInputText("");
     };
+    const handleShowAll = (e) => {
+        e.preventDefault();
+        setPlace(category)
+    }
 
 
     return (
@@ -124,6 +131,8 @@ const MapDiv = () => {
                 <div className="buttonDiv">
                 <button type="submit" style={{display:"none"}}>enterKey시 검색할 수 있는 형식상 submit 버튼</button>
                 <button id="initializeBtn" type="reset">초기화</button>
+                <button id ="showAllBtn" onClick={handleShowAll}>모두 보기</button>
+                
                 <Link to="/sub/addplace">
                     <button id="addBtn" type="add" disabled={(localStorage.getItem("loginFlag") === "ON") ? false : true} style={{ display: (localStorage.getItem("loginFlag") === "ON") ? "" : "none" }}
                     >추가</button></Link>
