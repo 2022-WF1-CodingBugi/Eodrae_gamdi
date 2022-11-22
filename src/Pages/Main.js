@@ -238,7 +238,6 @@ const Main = ({ onChange = f => f }) => {
                 <Carousel indicators={false}>
                     { food.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 5 ? createCarousel(d) : null) }
                     { food.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 5 && i < 10 ? createCarousel(d) : null) }
-                    { food.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 10 && i < 15 ? createCarousel(d) : null) }
                 </Carousel>
             </seciton>
 
@@ -247,7 +246,6 @@ const Main = ({ onChange = f => f }) => {
                 <Carousel indicators={false}>
                     { activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 5 ? createCarousel(d) : null) }
                     { activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 5 && i < 10 ? createCarousel(d) : null) }
-                    { activity.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 10 && i < 15 ? createCarousel(d) : null) }
 
                 </Carousel>
             </seciton>
@@ -257,7 +255,6 @@ const Main = ({ onChange = f => f }) => {
                 <Carousel indicators={false}>
                     { lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 5 ? createCarousel(d) : null) }
                     { lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 5 && i < 10 ? createCarousel(d) : null) }
-                    { lodging.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 10 && i < 15 ? createCarousel(d) : null) }
 
                 </Carousel>
             </seciton>
@@ -267,7 +264,6 @@ const Main = ({ onChange = f => f }) => {
                 <Carousel indicators={false}>
                     { attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i < 5 ? createCarousel(d) : null) }
                     { attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 5 && i < 10 ? createCarousel(d) : null) }
-                    { attraction.sort( (a, b) => b.like - a.like ).map( (d, i) => i >= 10 && i < 15 ? createCarousel(d) : null) }
 
                 </Carousel>
             </seciton>
