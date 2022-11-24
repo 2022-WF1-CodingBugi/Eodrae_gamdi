@@ -8,6 +8,7 @@ import attraction from './Data/attraction';
 import food from './Data/food';
 import lodging from './Data/lodging';
 import { useEffect } from 'react';
+import NotFound from"./Pages/NotFound"
 
 const createArray = length => [...Array(length)];
 
@@ -50,6 +51,7 @@ const App = () => {
                 <Route path="/" element ={ <Main onChange = {() => window.location.href = "/sub"} />}></Route>
                 <Route path="/sub" element ={<Sub />}></Route>
                 <Route path="/sub/addplace" element ={<AddPlace/>}></Route> 
+                <Route path ="*" element={<NotFound/>}></Route>
                 </Routes>
         
         </div>
