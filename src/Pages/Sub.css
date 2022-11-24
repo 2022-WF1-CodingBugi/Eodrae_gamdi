@@ -142,5 +142,9 @@ select::-ms-expand {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
+.NotFound{
+    margin-top:150px;
+    font-size: 50px;
+}
 
 
