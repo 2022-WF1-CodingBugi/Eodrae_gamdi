@@ -84,18 +84,18 @@ const food = [
         star : makeStar(5.0),
         explanation : "상춘재만의 개성있는 맛! 성게 비빔밥과 돌문어 비빔밥은 웨이팅이 아깝지 않은 맛이다."
     },
-    // {
-    //     name : "살찐고등어",
-    //     latitude : 33.526618605492864,
-    //     longitude : 126.88470744711263,
-    //     address : "제주특별자치도 제주시 구좌읍 해맞이해안로 1708 1층 (우)63363",
-    //     image : "../images/food/살찐고등어.png",
-    //     kakao_map : "https://place.map.kakao.com/379711544",
-    //     keyword : ["흑돼지", "돈까스"],
-    //     like : 41,
-    //     star : makeStar(5.0),
-    //     explanation : "트러플 오일, 핑크 소금, 와사비 조합이 흑돼지 돈까스와 만났다. 육즙 가득한 흑돼지 돈까스 맛집!"
-    // },
+    {
+        name : "살찐고등어",
+        latitude : 33.526618605492864,
+        longitude : 126.88470744711263,
+        address : "제주특별자치도 제주시 구좌읍 해맞이해안로 1708 1층 (우)63363",
+        image : "../images/food/살찐고등어.png",
+        kakao_map : "https://place.map.kakao.com/379711544",
+        keyword : ["흑돼지", "돈까스"],
+        like : 41,
+        star : makeStar(5.0),
+        explanation : "트러플 오일, 핑크 소금, 와사비 조합이 흑돼지 돈까스와 만났다. 육즙 가득한 흑돼지 돈까스 맛집!"
+    },
     {
         name : "정성듬뿍제주국",
         latitude : 33.514028646873754,
