@@ -34,7 +34,7 @@ const food = [
         keyword : ["카페", "에그타르트"],
         like : 15,
         star : makeStar(3.0),
-        explanation : "..."
+        explanation : "에그타르트도 맛있고 사진 찍기도 좋은 예쁜 카페"
     },
     {
         name : "곰막식당",
@@ -105,7 +105,8 @@ const food = [
         kakao_map : "https://place.map.kakao.com/13325715",
         keyword : ["각재기국", "국"],
         like : 0,
-        star : 0.0
+        star : 0.0,
+        explanation : "제주도에서만 맛 볼 수 있는 깊은 맑은 국물! 멜튀김도 JMT"
     },
     {
         name : "중문수두리보말칼국수",
@@ -116,7 +117,8 @@ const food = [
         kakao_map : "https://place.map.kakao.com/1148098112",
         keyword : ["칼국수", "보말칼국수"],
         like : 0,
-        star : 0.0
+        star : 0.0,
+        explanation : "사실 칼국수보다 전복죽이 더 맛있는 칼국수집"
     },
     {
         name : "부온",
@@ -127,7 +129,8 @@ const food = [
         kakao_map : "https://place.map.kakao.com/960474998",
         keyword : ["일식", "소바"],
         like : 0,
-        star : 0.0
+        star : 0.0,
+        explanation : "어디서도 볼 수 없었던 연어 소바!!"
     },
     {
         name : "원앤온리",
