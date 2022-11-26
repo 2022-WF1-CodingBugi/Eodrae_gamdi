@@ -142,7 +142,7 @@ const food = [
         keyword : ["카페", "바다뷰"],
         like : 5,
         
-        explanation : "..."
+        explanation : "원앤온리, 그 이상의 설명이 필요한가"
     },
     {
         name : "연돈",
@@ -154,7 +154,7 @@ const food = [
         keyword : ["식당", "돈까스"],
         like : 5,
         
-        explanation : "..."
+        explanation : "백종원 아저씨도 인정한 맛집"
     },
     {
         name : "우무",
@@ -166,7 +166,7 @@ const food = [
         keyword : ["카페", "푸딩"],
         like : 5,
         
-        explanation : "..."
+        explanation : "푸딩이 탱글탱글 "
     },
     {
         name : "노라바",
@@ -178,7 +178,7 @@ const food = [
         keyword : ["식당", "라면"],
         like : 5,
         
-        explanation : "..."
+        explanation : "노라바에서 노라바~"
     },
     {
         name : "착한갈치",
@@ -190,7 +190,7 @@ const food = [
         keyword : ["식당", "라면"],
         like : 5,
         
-        explanation : "..."
+        explanation : "착한갈치는 나쁜갈치보다 맛있다"
     }
 ]
 export default food
