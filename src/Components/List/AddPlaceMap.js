@@ -11,14 +11,14 @@ const AddPlaceMap = ({ searchPlace }) => {
 
   let navigate = useNavigate()
   // 검색결과 배열에 담아줌
-  const [Places, setPlaces] = useState([])
-  const [addingPlace,setAddingPlace]=useState(...Places)
-  const [modal,setModal] = useState(false)
+  const [Places, setPlaces] = useState([])  // 추가할 장소데이터 설정
+  const [addingPlace,setAddingPlace]=useState(...Places) // 추가할 장소 데이터 배열 구조분해
+  const [modal,setModal] = useState(false) //장소 추가 및 한줄평 등록 표시여부
 
   
 
 
-  
+  //카카오맵 API 활용해서 장소 추가를 위한 검색
   useEffect(() => {
     var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 })
     var markers = []
@@ -123,8 +123,6 @@ const AddPlaceMap = ({ searchPlace }) => {
               <br></br>
               <button id = "addResultListBtn" key ={i} onClick={()=>{
             setAddingPlace(Places[i])
-            // navigate("/sub/addplace/addnewplace")
-            console.log(addingPlace)
             setModal(true)
             }}>추가</button>
             </div>
@@ -142,5 +140,5 @@ const AddPlaceMap = ({ searchPlace }) => {
   ) 
   
 }
-
+// AddNewPlace 컴포넌트에 구조분해된 장소데이터 전달
 export  {AddPlaceMap}

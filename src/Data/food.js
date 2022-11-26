@@ -1,4 +1,4 @@
-import makeStar from "../Components/MakeStar"
+
 const food = [
     {
         name : "우진해장국",
@@ -9,7 +9,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/11547525",
         keyword : ["해장국", "고사리해장국"],
         like : 27,
-        star : makeStar(5.0),
+        
         explanation : "백종원도 인정한 최고의 해장국 집! 서귀포 바다를 바라보며 먹는 오션뷰 대형 맛집"
     },
     {
@@ -21,7 +21,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/9006988",
         keyword : ["회", "고등어회"],
         like : 18,
-        star : makeStar(4.0),
+        
         explanation : "바다 냄새가 혀 안에서 감돈다. 진정한 제주 맛집을 알고 싶다면 바로 여기"
     },
     {
@@ -33,7 +33,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/2003360746",
         keyword : ["카페", "에그타르트"],
         like : 15,
-        star : makeStar(3.0),
+        
         explanation : "에그타르트도 맛있고 사진 찍기도 좋은 예쁜 카페"
     },
     {
@@ -45,7 +45,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/18421685",
         keyword : ["고등어회", "회국수"],
         like : 56,
-        star : makeStar(5.0),
+        
         explanation : "다른건 몰라도 제주도에서 '이것'은 먹고가자. 고등어회와 회국수가 일품인 곳."
     },
     {
@@ -57,7 +57,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/559359242",
         keyword : ["고기국수", "비빔국수"],
         like : 18,
-        star : makeStar(4.0),
+        
         explanation : "양도 많고 가성비도 좋은 고기국수 맛집. 비빔국수의 양념과 야채가 고기와 함께 어울려 환상의 조합."
     },
     {
@@ -69,7 +69,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/23718318",
         keyword : ["오마카세", "스시"],
         like : 33,
-        star : makeStar(4.0),
+        
         explanation : "제주도의 3대 스시집 중 하나. 제주도 바다향이 느껴지는 듯한 스시 오마카세집이다."
     },
     {
@@ -81,7 +81,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/12397273",
         keyword : ["성게", "돌문어"],
         like : 37,
-        star : makeStar(5.0),
+        
         explanation : "상춘재만의 개성있는 맛! 성게 비빔밥과 돌문어 비빔밥은 웨이팅이 아깝지 않은 맛이다."
     },
     {
@@ -93,7 +93,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/379711544",
         keyword : ["흑돼지", "돈까스"],
         like : 41,
-        star : makeStar(5.0),
+        
         explanation : "트러플 오일, 핑크 소금, 와사비 조합이 흑돼지 돈까스와 만났다. 육즙 가득한 흑돼지 돈까스 맛집!"
     },
     {
@@ -105,7 +105,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/13325715",
         keyword : ["각재기국", "국"],
         like : 0,
-        star : 0.0,
+        
         explanation : "제주도에서만 맛 볼 수 있는 깊은 맑은 국물! 멜튀김도 JMT"
     },
     {
@@ -117,7 +117,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/1148098112",
         keyword : ["칼국수", "보말칼국수"],
         like : 0,
-        star : 0.0,
+        
         explanation : "사실 칼국수보다 전복죽이 더 맛있는 칼국수집"
     },
     {
@@ -129,7 +129,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/960474998",
         keyword : ["일식", "소바"],
         like : 0,
-        star : 0.0,
+        
         explanation : "어디서도 볼 수 없었던 연어 소바!!"
     },
     {
@@ -141,7 +141,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/217787831",
         keyword : ["카페", "바다뷰"],
         like : 5,
-        star : makeStar(0.0),
+        
         explanation : "..."
     },
     {
@@ -153,7 +153,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/1890778114",
         keyword : ["식당", "돈까스"],
         like : 5,
-        star : makeStar(0.0),
+        
         explanation : "..."
     },
     {
@@ -165,7 +165,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/1152497778",
         keyword : ["카페", "푸딩"],
         like : 5,
-        star : makeStar(0.0),
+        
         explanation : "..."
     },
     {
@@ -177,7 +177,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/26352466",
         keyword : ["식당", "라면"],
         like : 5,
-        star : makeStar(0.0),
+        
         explanation : "..."
     },
     {
@@ -189,7 +189,7 @@ const food = [
         kakao_map : "https://place.map.kakao.com/2004400182",
         keyword : ["식당", "라면"],
         like : 5,
-        star : makeStar(0.0),
+        
         explanation : "..."
     }
 ]

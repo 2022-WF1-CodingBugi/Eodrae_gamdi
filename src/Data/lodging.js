@@ -7,8 +7,8 @@ const lodging = [
         image : "../images/lodging/와온.png",
         kakao_map : "https://place.map.kakao.com/84554460",
         keyword : ["펜션", "사우나"],
-        like : 0,
-        star : 0.0,
+        like : 36,
+        
         explanation : "에메랄드 빛 바다와 포근한 바람이 부르는 함덕 구석의 돌집"
     },
     {
@@ -19,8 +19,8 @@ const lodging = [
         image : "../images/lodging/의귀소담.png",
         kakao_map : "https://place.map.kakao.com/1537209042",
         keyword : ["노천탕", "조식 제공"],
-        like : 0,
-        star : 0.0,
+        like : 19,
+        
         explanation : "귤밭에 둘러 싸여져 있는, "
     },
     {
@@ -31,8 +31,8 @@ const lodging = [
         image : "./images/lodging/폴개우엉.png",
         kakao_map : "https://place.map.kakao.com/1879458432",
         keyword : ["서귀포"],
-        like : 0,
-        star : 0.,
+        like : 21,
+        
         explanation : "제주도 남쪽, 두 갈래 길 중심에 빨간 지붕이 얹어진 곳. 폴개에서 우영[정원]을 걷다."
     },
     {
@@ -44,7 +44,7 @@ const lodging = [
         kakao_map: "https://place.map.kakao.com/1888777377",
         keyword: ["독채펜션", "노천탕"],
         like: 48,
-        star: 0.0,
+        
         explanation : "김녕에 있는, 독채 바베큐와 야외 노천탕을 즐길 수 있는 곳"
     },
     {
@@ -56,7 +56,7 @@ const lodging = [
         kakao_map: "https://place.map.kakao.com/2064886161",
         keyword: ["독채펜션", "수영장"],
         like: 4,
-        star: 0.0,
+        
         explanation : "제주도 한적한 시골에서 느낄 수 있는, 햇살 가득한 화려하면서 우아한 공간"
     },
     {
@@ -68,7 +68,7 @@ const lodging = [
         kakao_map: "https://place.map.kakao.com/1187373992",
         keyword: ["에어비앤비", "자쿠지"],
         like: 11,
-        star: 0.0,
+        
         explanation : "1972년부터 이어온, 옛 정이 깃든 아날로그식 감성과 현대식의 편안함을 접목한 휴식공간"
     },
     {
@@ -80,7 +80,7 @@ const lodging = [
         kakao_map : "https://place.map.kakao.com/852057326",
         keyword : ["게스트하우스"],
         like : 0,
-        star : 0.0,
+        
         explanation : "산방산과 바다에 둘러쌓인, 제주의 고요함에서 벗어나 다양한 사람들과 어울릴 수 있는 곳 "
     },
     {
@@ -92,7 +92,7 @@ const lodging = [
         kakao_map : "https://place.map.kakao.com/27578867",
         keyword : ["독채", "구좌읍"],
         like : 50,
-        star : 5.0,
+        
         explanation : "어느날, 문득, 제주에 왔다.  "
     },
     {
@@ -103,8 +103,9 @@ const lodging = [
         image : "../images/lodging/광어멀스테이.png",
         kakao_map : "https://place.map.kakao.com/538350320",
         keyword : ["수영장", "협재"],
-        like : 200,
-        star : 5.0
+        like : 2,
+        
+        explanation : "광야로 걸어가~"
     },
     {
         name : "제주스테이대흘",
@@ -114,8 +115,8 @@ const lodging = [
         image : "../images/lodging/스테이대흘.png",
         kakao_map : "https://place.map.kakao.com/290388887",
         keyword : ["독채", "프라이빗"],
-        like : 80,
-        star : 4.2
+        like : 8,
+        explanation : "사흘 나흘 묵어도 손색없는 숙소"
     },
     {
         name : "무명고택",
@@ -125,8 +126,8 @@ const lodging = [
         image : "../images/lodging/무명고택.png",
         kakao_map : "https://place.map.kakao.com/1859162465",
         keyword : ["한옥", "독채"],
-        like : 40,
-        star : 4.0
+        like : 4,
+        explanation :"무명의 알려지지 않은 기회의 땅"
     },
     {
         name : "노루하루",
@@ -136,8 +137,8 @@ const lodging = [
         image : "../images/lodging/노루하루.png",
         kakao_map : "https://place.map.kakao.com/2099304066",
         keyword : ["복층", "자쿠지"],
-        like : 120,
-        star : 4.5
+        like : 12,
+        explanation :"인테리어부터 포근 그 잡채인 독채 펜션"
     },
     {
         name : "시호루",
@@ -147,8 +148,8 @@ const lodging = [
         image : "../images/lodging/시호루.png",
         kakao_map : "https://place.map.kakao.com/451404912",
         keyword : ["독채", "실내풀"],
-        like : 95,
-        star : 4.6
+        like : 9,
+        explanation :"시간이 멈춘 듯한 구좌의 조용한 독채. 따뜻한 온기와 좋은 향기로 시각, 청각, 후각이 모두 행복해진다."
     },
     {
         name : "스테이빌레",
@@ -158,8 +159,8 @@ const lodging = [
         image : "../images/lodging/스테이빌레.png",
         kakao_map : "https://place.map.kakao.com/118823630",
         keyword : ["단독", "피크닉"],
-        like : 238,
-        star : 4.4
+        like : 2,
+        explanation :"사진 맛집 인스타 갬성 사진을 찍고싶다면 여기!"
     },
     {
         name : "그날의하도",
@@ -169,8 +170,8 @@ const lodging = [
         image : "../images/lodging/그날의하도.png",
         kakao_map : "https://place.map.kakao.com/2125631963",
         keyword : ["바베큐", "하도리"],
-        like : 118,
-        star : 4.6
+        like : 1,
+        explanation :"조용한 하도리 마을 안 독채 숙소"
     },
     {
         name : "프롬나드제주",
@@ -180,8 +181,9 @@ const lodging = [
         image : "../images/lodging/프롬나드제주.png",
         kakao_map : "https://place.map.kakao.com/1889843326",
         keyword : ["풀빌라", "고요"],
-        like : 94,
-        star : 4.4
+        like : 19,
+        explanation :"오픈한지 1년도 안 된 서쪽 일몰 명소들과 가까운 독채 풀빌라"
+        
     }
     
 ]

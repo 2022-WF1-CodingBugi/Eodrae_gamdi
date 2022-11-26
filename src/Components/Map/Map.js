@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 const { kakao } = window;
 
 const Map = ({ searchPlaces }) => {
-
+    // 카카오맵 API 를 활용해 장소를 지도에 마커와 함께 표시
     useEffect(() => {
         const container = document.getElementById('map');
         const options = {
@@ -16,40 +16,6 @@ const Map = ({ searchPlaces }) => {
         var markers = [];
         var infowWindows = [];
 
-        // //-----------고쳐야 될 부분--------------
-        // console.log(props.input)
-        // if (props.searchPlaces == "removeAll") {
-        //     removeMarkers();
-        // }
-        // else if (props.input == "all") {
-        //     setMarkers(props.searchPlaces);
-        // } // all 입력하면 모든 마커 띄움 
-
-        // else {
-        //     let arr = [];
-        //     for (let i = 0; i < props.searchPlaces.length; i++) {
-        //         if (props.searchPlaces[i].name.indexOf(props.input) != -1) { //장소의 이름 일부분만 검색해도 검색되게 함 ex)'우'만 검색해도 '우진해장국' 나옴
-        //             arr.push(props.searchPlaces[i])
-        //             setMarkers(arr)
-        //         }
-        //     }
-        // } //검색했을때 이름이 일치하는 장소만 마커 띄움
-        // //-----------고쳐야 될 부분--------------
-
-
-        // function placesSearchCB(places, status, pagination) {
-        //     if (status === kakao.maps.services.Status.OK) {
-        //         console.log(status)
-        //         let bounds = new kakao.maps.LatLngBounds();
-
-        //         for (let i = 0; i < places.length; i++) {
-        //             displayMarker(places[i]);
-        //             bounds.extend(new kakao.maps.LatLng(places[i].latitude, places[i].longitude));
-        //         }
-
-        //         map.setBounds(bounds);
-        //     }
-        // }
         if (searchPlaces !== "") {
             removeMarkers();
             setMarkers(searchPlaces);
@@ -69,6 +35,7 @@ const Map = ({ searchPlaces }) => {
             map.setBounds(bounds);
         }
 
+        // 마커 생성
         function displayMarker(place) {
             let marker = new kakao.maps.Marker({
                 map: map,
@@ -83,7 +50,7 @@ const Map = ({ searchPlaces }) => {
 
             markers.push(marker);
         }
-
+        // 지도에 표시된 마커 전부 삭제
         function removeMarkers() {
             for (let i = 0; i < markers.length; i++) {
                 markers[i].setMap(null);
@@ -105,7 +72,7 @@ const Map = ({ searchPlaces }) => {
                 infowWindows[i].close();
             }
         }
-
+        // 지도 이동
         function panTo(lat, lng) {
             var moveLatLng = new kakao.maps.LatLng(lat, lng);
 
@@ -118,7 +85,6 @@ const Map = ({ searchPlaces }) => {
 
                 infoWindow.open(map, marker);
                 var latLng = marker.getPosition();
-                //map.getLevel() < 3 ? null : map.setLevel(3);
                 map.setLevel(7);
 
                 panTo(latLng.getLat(), latLng.getLng());

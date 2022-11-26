@@ -1,4 +1,5 @@
 import "./Sub.css"
+// 유효하지 않은 url 접근시
 const NotFound =()=>{
     return(
         <div className="NotFound">

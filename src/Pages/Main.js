@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from "react";
 import Carousel from "react-material-ui-carousel";
 import Swal from "sweetalert2"; // 알림창 모듈
 
-//import main_logo from "./images/main_logo.png"
+
 import food_category from "./images/food.png"
 import activity_category from "./images/activity.png"
 import lodging_category from "./images/lodging.png"
@@ -27,34 +27,34 @@ import attraction from '../Data/attraction';
 
 import "./Main.css";
 import Category from "./Category";
-import { Animation } from "jquery";
-import { display } from "@mui/system";
+
 
 const User = {
     id: 'codingbugi@hansung.ac.kr',
     pw: 'coding1234!'
 }
+    // 미리 설정해 놓은 에디터 아이디와 비번
 
 const Main = ({ onChange = f => f }) => {
-    let loginFlag = "OFF";
+    let loginFlag = "OFF";  //로컬스토리지에 저장할 에디터 로그인 여부
     const idInput = useRef();
     const passWInput = useRef();
     const btn = useRef();
-    //const color = ["rgb(206, 243, 255)", "rgb(43, 43, 255)"]; // 연한 하늘, 파랑
-    const [loginText, changeLoginText] = useState("로그인");
-    const [loginSuccess, setLoginSuccess] = useState(false);
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [id, setId] = useState("");
-    const [pw, setPw] = useState(""); 
-    //const [btnColor, setbtnColor] = useState(color[0]); //id와 password가 정해진 형식을 만족하면 버튼이 활성화
-    const [idValid, setidValid] = useState(false);
-    const [pwValid, setPwValid] = useState(false);
-    const [notAllow, setNotAllow] = useState(true);
+    const [loginText, changeLoginText] = useState("로그인"); //로그인 로그아웃 버튼 텍스트 변환
+    const [loginSuccess, setLoginSuccess] = useState(false);  //로그인 성공 여부
+    const [modalIsOpen, setModalIsOpen] = useState(false);  //로그인 창 팝업 여부
+    const [id, setId] = useState("");  //아이디 입려 감지
+    const [pw, setPw] = useState("");  //비번 입력 감지
+    const [idValid, setidValid] = useState(false);  //아이디 일치여부 검사
+    const [pwValid, setPwValid] = useState(false);  //비번 일치여부 검사
+    const [notAllow, setNotAllow] = useState(true);  //아이디 비번 둘다 맞아야 notAllow 를 false 로
+
 
 
     // id 값 감지
     const onChangeId = (e) => {
         setId(e.target.value);
+        // 이메일 정규표현식
         const regex =
         /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
         if (regex.test(e.target.value)) {
@@ -66,6 +66,7 @@ const Main = ({ onChange = f => f }) => {
     // password 값 감지
     const onChangePassword = (e) => {
         setPw(e.target.value);
+        // 영문 ,숫자 ,특수기호 포함 8자이상
         const regex =
         /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,20}$/;
         if (regex.test(e.target.value)) {
@@ -76,10 +77,12 @@ const Main = ({ onChange = f => f }) => {
     };
 
     const loginBtn = () => {
+        // 로그인버튼 텍스트가 로그인일때, 로그인 창이 뜨도록
         if(loginText === "로그인") {
             setModalIsOpen(true);
             
         }
+        // 로컬스토리지 값을 로그아웃으로 수정하고, 로그인 버튼 텍스트도 로그아웃으로 변경
         else {
             localStorage.setItem("loginFlag", "OFF");
             changeLoginText("로그인");
@@ -87,6 +90,7 @@ const Main = ({ onChange = f => f }) => {
         
     }
     const btnSubmit = () => {
+        // 로그인 성공시 로그인 성공 알림띄우고, 로컬스토리지 값 변경 후 loginSuccess값 true 로 변경
         if (id === User.id && pw === User.pw) {
             Swal.fire({
                 icon: 'success',    
@@ -96,6 +100,7 @@ const Main = ({ onChange = f => f }) => {
             localStorage.setItem("loginFlag", "ON");
             setLoginSuccess(true)
         }
+
         else {
             setLoginSuccess(false);
             Swal.fire({
@@ -105,7 +110,7 @@ const Main = ({ onChange = f => f }) => {
             });
         }
     }
-
+    // 데이터를 받아서 캐러셀에 넣을 컴포넌트 생성
     const createCarousel = (data) => {
         return (
             <div className="carousel_div" onClick={() => window.open(data.kakao_map)}>
@@ -115,6 +120,7 @@ const Main = ({ onChange = f => f }) => {
         )
     }
 
+    // 로그인 성공, 로그아웃 성공시 
     useEffect(() => {
         if(idValid && pwValid) {
           setNotAllow(false);
@@ -129,12 +135,15 @@ const Main = ({ onChange = f => f }) => {
 
     useEffect(() => {
         setModalIsOpen(false)
+
     }, [loginText]);
 
+    // modalIsOpen 의 값에 따라 로그인 팝업창 오픈
     useEffect(() => {
         idInput.current.value = null;
         passWInput.current.value = null;
         if(modalIsOpen === true) {
+            //로그인 팝업창 스크롤 방지
             document.body.style.cssText = `
             position: fixed; 
             top: -${window.scrollY}px;

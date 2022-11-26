@@ -1,17 +1,11 @@
 import { useState } from "react";
-import activity from "../../Data/activity";
-import attraction from "../../Data/attraction";
-import lodging from "../../Data/lodging";
-import food from "../../Data/food"
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
 const AddNewPlace = ({addingPlace}) =>{
     let navigate = useNavigate()
-    console.log(addingPlace)
-    const [InputText, setInputText] = useState('')
-    const [selected, setSelected] = useState('')
+    const [InputText, setInputText] = useState('') // 추가할 장소 한줄평 등록
+    const [selected, setSelected] = useState('') // 추가할 장소의 카테고리 선택
 
    
     const onChange = (e) => {
@@ -23,6 +17,7 @@ const AddNewPlace = ({addingPlace}) =>{
         setSelected(select)
 
     }
+    // 추가할 장소 데이터를 로컬스토리지에 추가해주는 함수
     const addData = (data) =>{
        data.push(
         {name:`${addingPlace.place_name}`,
@@ -42,7 +37,7 @@ const AddNewPlace = ({addingPlace}) =>{
         case'attraction': localStorage.setItem(selected,JSON.stringify(data)); break;
         case 'food': localStorage.setItem(selected,JSON.stringify(data)); break;
         case 'lodging': localStorage.setItem(selected,JSON.stringify(data)); break;
-        // 성관 : 로컬스토리지에 사용자가 선택한 장소 카테고리에 맞게 추가
+        //  로컬스토리지에 사용자가 선택한 장소 카테고리에 맞게 추가
        }
     }
 
@@ -53,7 +48,7 @@ const AddNewPlace = ({addingPlace}) =>{
                 case 'attraction': addData(JSON.parse(localStorage.getItem(selected))); break;
                 case 'food': addData(JSON.parse(localStorage.getItem(selected))); break;
                 case 'lodging': addData(JSON.parse(localStorage.getItem(selected))); break;
-                // 성관 :추가버튼 누르면 로컬스토리지에 있는 데이터 값을 addData()에 파라미터로 전달
+                // 추가버튼 누르면 로컬스토리지에 있는 데이터 값을 addData()에 파라미터로 전달
             }
         setInputText('')
         navigate('/sub')

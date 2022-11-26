@@ -3,8 +3,8 @@ import $ from 'jquery';
 import { useState } from 'react';
 import { HeartOutlined, HeartFilled } from '@ant-design/icons';
 import './List.css';
-import { CompareSharp } from '@mui/icons-material';
 
+//리스트 화살표에 온클릭 이벤트 다는 함수
 $(function () {
   let list = document.getElementsByClassName("List-Item");
   let arrowList = document.getElementsByClassName("arrow_image");
@@ -25,11 +25,11 @@ $(function () {
 });
 
 function List({ places, setPlace }) {
-  let listItem = JSON.parse(localStorage.getItem(sessionStorage.getItem('category')));
+  let listItem = JSON.parse(localStorage.getItem(sessionStorage.getItem('category'))); //세션스토리지에서 선택된 카테고리 읽어와 그에맞는 장소 데이터를 로컬스토리지에서 받아옴
   let likeChecked = JSON.parse(localStorage.getItem(`${sessionStorage.getItem('category')}Checked`)); // 좋아요 체크 여부 로컬 스토리지에서 가져오기
 
-  const [icon, setIcon] = useState("");
-  const [checked, setChecked] = useState(likeChecked);
+  const [icon, setIcon] = useState(""); //카테고리에 맞는 아이콘 설정
+  const [checked, setChecked] = useState(likeChecked); //좋아요 체크여부 배열
 
   // 하트가 클릭 됐을 때 실행되는 함수
   const toggleLike = (event, i) => {
@@ -72,6 +72,7 @@ function List({ places, setPlace }) {
         break;
     }
 
+    // 카테고리 비뀔때 리스트 상세정보 다 닫히게
     for (let i = 0; i < listItem.length; i++) {
       document.getElementsByClassName('List-Item-Image-div')[i]
         .setAttribute("style", "display : none");
@@ -89,7 +90,7 @@ function List({ places, setPlace }) {
         {item.explanation}
         <p style={{display: "inline-block", float: "right"}}>{JSON.parse(localStorage.getItem(`${sessionStorage.getItem('category')}Checked`))[i] ? <HeartFilled onClick={(event) => toggleLike(event, i)} /> : <HeartOutlined onClick={(event) => toggleLike(event, i)} /> /* true면 꽉 찬 하트, false면 빈 하트 */}&nbsp;
         {item.like}</p>
-        {/* 별점? 저장? item.star*/}
+        
       </p>
       <img className='arrow_image' src='./images/down-arrow.png' style={{width: "20px", height: "20px"}} onClick={() => setPlace([item])}/>
       <div className='List-Item-Image-div'>

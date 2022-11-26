@@ -9,8 +9,8 @@ import searchIcon from "../../Resources/Images/background-image/searchIcon.png";
 
 
 const AddPlace = (()=>{
-  const [InputText, setInputText] = useState('')
-  const [Place, setPlace] = useState('')
+  const [InputText, setInputText] = useState('') // 추가할 장소이름 검색
+  const [Place, setPlace] = useState('') // 추가할 장소 데이터 설정
 
   const onChange = (e) => {
     setInputText(e.target.value)
@@ -46,6 +46,5 @@ const AddPlace = (()=>{
     </>
   )
 })
-
-
+// AddPlaceMap 컴포넌트에 이름으로 검색한 장소 데이터 전달
 export default AddPlace;

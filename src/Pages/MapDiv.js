@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Map from "../Components/Map/Map";
 import "./Sub.css"
 import $ from 'jquery';
-import List from "../Components/List/List"; // foodList -> List로 변경
+import List from "../Components/List/List"; 
 import activity from "../Data/activity";
 import attraction from "../Data/attraction";
 import lodging from "../Data/lodging";
@@ -12,8 +12,8 @@ import searchIcon from "../Resources/Images/background-image/searchIcon.png";
 import Swal from "sweetalert2"; // 알림창 모듈
 
 const MapDiv = () => {
-    const [inputText, setInputText] = useState("");
-    const [place, setPlace] = useState("")
+    const [inputText, setInputText] = useState("");  // 검색창에 검색하는 내용
+    const [place, setPlace] = useState("") // 장소데이터(배열)
     const [category, setCategory] = useState(activity); // 일단 액티비티로 해놈
     const [selected, setSelected] = useState('activity') //옵션 선택바가 자동으로 바뀌게 수정
     
@@ -23,11 +23,10 @@ const MapDiv = () => {
         const data=JSON.parse(localStorage.getItem(temp))
         if(data!=undefined){
             setCategory(data)
-             // 성관: 그냥 스테이트로 로컬스토리지 데이터 받아와서 카테고리로 설정해주면 되는거였음...
-             // setPlace(category) <- 이거는 첫화면에 마커 다 뜨게하는건데 맛집은 안뜸. 아마 우 치면 안나오는거랑 같은 오류인듯 
-    
+             // 로컬스토리지에서 데이터를 받아와 장소 데이터 설정
             }
         else{
+            //세션스토리지에 설정된 카테고리에 따라 장소 데이터(배열) 설정
         switch (temp) {
             case 'activity': setCategory(activity); break;
             case 'attraction': setCategory(attraction); break;
@@ -35,20 +34,13 @@ const MapDiv = () => {
             case 'lodging': setCategory(lodging); break;
         }
     }
-        //const i = data.length - attraction.length
-        // for (let i = 0; i<data.length; i++) {
-        //     attraction.splice(i, 1, data[i])
-        // }
-        
-    
     },[])
 
+    // 카테고리옵션 바뀔 때 마다 장소 데이터 설정
     useEffect(() => {
         setPlace(place)
     }, [selected])
     
-
-
     const onChange = (e) => {
         setInputText(e.target.value);
     };
@@ -71,12 +63,13 @@ const MapDiv = () => {
     }
    
 
+    // 검색기능 구현
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (inputText !== "") {
-            if (inputText != "all") {
-                let tempArray = category.filter(place => place.name.includes(inputText));
-                if (tempArray.length == 0) {
+        if (inputText !== "") {  // null 감지 여부 
+            if (inputText != "all") { // all 입력시 모든 장소 보여줌
+                let tempArray = category.filter(place => place.name.includes(inputText)); // inputText조건에 맞는 장소 이름들로 필터링 함
+                if (tempArray.length == 0) { //검색 결과가 존재하지 않을 떄
                     setPlace("")
                     Swal.fire({
                         icon: 'error',    
@@ -93,16 +86,14 @@ const MapDiv = () => {
             setPlace("")
         }
 
-        //search ? setSearch(false) : setSearch(true) //검색 버튼을 누를때마다 search값 바뀌게 설정
-
-        // setInputText("");
     };
-
+    // 초기화 버튼
     const handleReset = (e) => {
         e.preventDefault();
         setPlace("");
         setInputText("");
     };
+    // 모두보기 버튼
     const handleShowAll = (e) => {
         e.preventDefault();
         setPlace(category)
@@ -140,11 +131,12 @@ const MapDiv = () => {
                 </div>
             </form>
             <div className="mapListDiv">
-            <Map searchPlaces={place} />
+            <Map searchPlaces={place} /> 
             <List places={category} setPlace={setPlace} />
             </div>
         </>
     );
 };
-//Map 컴포넌트에 장소정보와 검색한 텍스트를 넘겨줌
+// Map 컴포넌트에 조건에 충족하는 장소 데이터 넘겨줌
+// List 컴포넌트에 카테고리에 맞는 장소 데이터와 장소 데이터 설정 함수 넘겨줌
 export default MapDiv;

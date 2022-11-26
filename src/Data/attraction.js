@@ -8,7 +8,7 @@ const attraction = [
         kakao_map : "https://place.map.kakao.com/7962003",
         keyword : ["하천", "카약"],
         like : 5,
-        star : 0.0,
+        
         explanation:"제주에서 즐기는 카누"
     },
     {
@@ -20,7 +20,7 @@ const attraction = [
         kakao_map : "https://place.map.kakao.com/8413659",
         keyword : ["경치", "산책"],
         like : 10,
-        star : 0.0,
+        
         explanation:"날씨가 좋으면 좋은데로 흐리면 흐린데로 좋은곳"
     },
     {
@@ -32,7 +32,7 @@ const attraction = [
         kakao_map : "https://place.map.kakao.com/25285071",
         keyword : ["산봉우리", "일출"],
         like : 42,
-        star : 0.0,
+        
         explanation:"동쪽 제주의 랜드마크"
     },
     {
@@ -44,7 +44,7 @@ const attraction = [
         kakao_map : "https://place.map.kakao.com/9461977",
         keyword : ["핑크뮬리", "억새밭"],
         like : 17,
-        star : 0.0,
+        
         explanation:"겨울에도 꽃을 맞이할 수 있는 곳"
     },
     {
@@ -56,7 +56,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/10793668",
         keyword: ["일출", "풍경"],
         like: 2,
-        star: 0.0,
+        
         explanation:"눈으로 보는 관동별곡"
     },
     {
@@ -68,7 +68,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/7863269",
         keyword: ["세계자연유산", "동굴"],
         like: 8,
-        star: 0.0,
+        
         explanation:"여름에도 시원한 동굴체험"
     },
     {
@@ -80,7 +80,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/26608807",
         keyword: ["테마파크", "가족"],
         like: 36,
-        star: 0.0,
+        
         explanation:"우리나라 최대규모 헬로키티 파크"
     },
     {
@@ -92,7 +92,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/1682547680",
         keyword: ["미술관", "전시"],
         like: 3,
-        star: 0.0,
+        
         explanation:"다양한 미술을 다양한 방법으로 즐기는 곳"
     },
     {
@@ -104,7 +104,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/1960031145",
         keyword: ["소품샵", "카페"],
         like: 19,
-        star: 0.0,
+        
         explanation:"노란지붕아래 귀여운 냥이들"
     },
     {
@@ -116,7 +116,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/125569847",
         keyword: ["경치", "체험"],
         like: 9,
-        star: 0.0,
+        
         explanation:"그림같은풍경을 보며 그리는 그림"
     },
     {
@@ -128,7 +128,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/1085452600",
         keyword: ["소품샵", "감성"],
         like: 17,
-        star: 0.0,
+        
         explanation:"따듯하고 아기자기한 소품"
     },
     {
@@ -140,7 +140,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/8025182",
         keyword: ["섬", "자연"],
         like: 27,
-        star: 0.0,
+        
         explanation:"제주 안의 또 다른 섬, 우도"
     },
     {
@@ -152,7 +152,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/1974620820",
         keyword: ["문구", "소품샵"],
         like: 10,
-        star: 0.0,
+        
         explanation:"조용한 마을에서 찾을 수 있는 옛날의 추억"
     },
     {
@@ -164,7 +164,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/1859768130",
         keyword: ["서점", "소규모"],
         like: 13,
-        star: 0.0,
+        
         explanation:"책을 좋아한다면 꼭 가야할 독립서점"
     },
     {
@@ -176,7 +176,7 @@ const attraction = [
         kakao_map: "https://place.map.kakao.com/317349030",
         keyword: ["동백꽃", "농장"],
         like: 22,
-        star: 0.0,
+        
         explanation:"통유리로 너머로 보이는 동백꽃나무들이 주는 아름다움"
     },
 

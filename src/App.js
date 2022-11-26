@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router,Route, Routes,Link} from "react-router-dom";
 import Main from "./Pages/Main";
 import Sub from './Pages/Sub';
 import AddPlace from './Components/List/AddPlace';
@@ -26,6 +26,7 @@ const App = () => {
         if(localStorage.lodging == undefined){
             localStorage.setItem('lodging',JSON.stringify(lodging))
         }
+        // 처음 렌더링될때 로컬스토리지에 값이 undefined 인 경우 우리가 초기 설정해둔 데이터를 로컬스토리지에 저장 
 
         if(localStorage.foodChecked == undefined) {
             let foodChecked = createArray(food.length).map( item => item = false);
@@ -43,7 +44,7 @@ const App = () => {
             let attractionChecked = createArray(attraction.length).map( item => item = false);
             localStorage.setItem('attractionChecked', JSON.stringify(attractionChecked));
         }
-    },[]) // 성관 :처음 렌더링될때 로컬스토리지에 값이 undefined 인 경우 우리가 초기 설정해둔 데이터를 로컬스토리지에 저장 | 좋아요 여부도 undifined인 경우 전부 false로 초기화해서 저장
+    },[]) // 좋아요 여부도 undifined인 경우 전부 false로 초기화해서 저장
     return (
         <div style={{ textAlign: 'center' }}>
         
