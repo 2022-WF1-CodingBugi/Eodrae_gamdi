@@ -14,6 +14,7 @@
 ## :four_leaf_clover:멤버
 | <a href="https://github.com/kwani6684"><img src="https://avatars.githubusercontent.com/u/112394220?v=4" width="90" height="90"></a> | <a href="https://github.com/jueun0725"><img src="https://avatars.githubusercontent.com/u/103445254?v=4" width="90" height="90"></a> | <a href="https://github.com/wonchanjoo"><img src="https://avatars.githubusercontent.com/u/92321183?v=4" width="90" height="90"></a> | <a href="https://github.com/newJunsung"><img src="https://avatars.githubusercontent.com/u/107932188?v=4" width="90" height="90"></a> | <a href="https://github.com/Fineday-yn"><img src="https://avatars.githubusercontent.com/u/81400435?v=4" width="90" height="90"></a> |
 | ----- | ----- | ----- | ----- | ----- |
+| 1891107 | 2071050 | 2071154 | 1891027 | 2071479 |
 | [최성관(팀장)](https://github.com/kwani6684) | [최호빈](https://github.com/zzawang) | [원찬주](https://github.com/wonchanjoo) | [김준성](https://github.com/newJunsung) | [김유나](https://github.com/Fineday-yn) |
 
 _[목차로 이동](#zap목차)_
